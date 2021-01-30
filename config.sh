@@ -5,7 +5,7 @@ echo "Install..."
 sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syyu
 # 安装必要软件
-sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime flameshot rofi go lsd
+sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime flameshot rofi go lsd bat
 
 echo "请配置 rofi 与 flameshot快捷方式"
 
@@ -23,6 +23,12 @@ git config --global user.email dongkaige@gmail.com
 # 安装zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mv ./zshrc ~/.zshrc
+
+# pure theme
+mkdir -p "$HOME/.zsh"
+git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+# TODO: starship
+
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
@@ -32,7 +38,7 @@ source ~/.cargo/env
 cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.0
 # cargo install
 rustup install nightly
-cargo install tealdeer
+cargo install tealdeer ripgrep
 tldr --update
 
 # 配置emacs
