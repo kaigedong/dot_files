@@ -64,9 +64,14 @@ echo "请在重启后，设置输入法引擎"
 
 # 配置alacritty TODO: add fonts
 mkdir -p ~/.config/alacritty
-mv ./alacritty.yaml ~/.config/alacritty/
+mv ./alacritty.yml ~/.config/alacritty/
 # font:
 # theme:
+wget https://codeload.github.com/dracula/alacritty/zip/master
+unzip alacritty-master.zip
+cd alacritty-master
+cp dracula.yml ~/.config/alacritty
+cd ../ && rm -r alacritty-master.zip alacritty-master
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
