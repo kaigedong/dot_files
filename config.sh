@@ -7,6 +7,8 @@ sudo pacman -Syyu
 # 安装必要软件
 sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime flameshot rofi go lsd bat
 
+sudo timedatectl set-local-rtc true
+
 echo "请配置 rofi 与 flameshot快捷方式"
 
 # 配置v2ray
