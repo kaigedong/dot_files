@@ -1,9 +1,9 @@
 echo "Initing manjaro..."
-echo "Install..."
 
 # 设置源
 sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syyu
+
 # 安装必要软件
 sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime flameshot rofi go lsd bat
 
@@ -36,31 +36,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # 安装rust
 mkdir ~/.cargo
-echo "[source.crates-io]
-registry = "https://github.com/rust-lang/crates.io-index"
-
-# 替换成你偏好的镜像源
-replace-with = 'rustcc'
-
-# rustcc 1号源
-[source.rustcc]
-registry="git://crates.rustcc.com/crates.io-index"
-
-# rustcc 2号源
-[source.rustcc2]
-registry="git://crates.rustcc.cn/crates.io-index"
-
-# 清华大学
-[source.tuna]
-registry = "https://mirrors.tuna.tsinghua.edu.cn/git/crates.io-index.git"
-
-# 中国科学技术大学
-[source.ustc]
-registry = "git://mirrors.ustc.edu.cn/crates.io-index"
-
-# 上海交通大学
-[source.sjtu]
-registry = "https://mirrors.sjtug.sjtu.edu.cn/git/crates.io-index" > ~/.cargo/env
+cp ./cargo_config ~/.cargo/config
 
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 source ~/.cargo/env
@@ -93,7 +69,7 @@ echo "请在重启后，设置输入法引擎"
 
 # 配置alacritty TODO: add fonts
 mkdir -p ~/.config/alacritty
-mv ./alacritty.yml ~/.config/alacritty/
+cp ./alacritty.yml ~/.config/alacritty/
 # theme:
 wget https://codeload.github.com/dracula/alacritty/zip/master
 unzip alacritty-master.zip
@@ -110,7 +86,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 
 # ssh
 mkdir ~/.ssh
-mv ./ssh/* ~/.ssh/
+cp ./ssh/* ~/.ssh/
 
 # gnome插件
 echo "请登录firefox浏览器..."
