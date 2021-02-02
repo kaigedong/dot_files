@@ -29,7 +29,6 @@ mv ./zshrc ~/.zshrc
 # pure theme
 mkdir -p "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-# TODO: starship
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -43,13 +42,13 @@ source ~/.cargo/env
 cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.0
 # cargo install
 rustup install nightly
-cargo install tealdeer ripgrep
+cargo install tealdeer ripgrep fd-find
 tldr --update
 
 # 配置emacs
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
-# todo: config
+cp ./doom.d/* ~/.doom.d/
 
 # 配置tmux
 cd ~
@@ -67,12 +66,15 @@ cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 echo "输入法将在重启后生效"
 echo "请在重启后，设置输入法引擎"
 
-# 配置alacritty TODO: add fonts
+# 配置alacritty
 mkdir -p ~/.config/alacritty
 cp ./alacritty.yml ~/.config/alacritty/
 echo "Download nerd fonts: https://www.nerdfonts.com/"
 
-# theme:
+# 微软雅黑
+echo "Download Yahei: https://www.download-free-fonts.com/"
+
+# alacritty theme:
 wget https://codeload.github.com/dracula/alacritty/zip/master
 unzip alacritty-master.zip
 cd alacritty-master
