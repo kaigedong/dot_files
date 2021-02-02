@@ -18,6 +18,8 @@ sudo systemctl restart v2ray
 export http_proxy=http://127.0.0.1:10809
 export https_proxy=http://127.0.0.1:10809
 
+echo "Set proxy role: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
+
 # 设置git
 git config --global user.name bobo
 git config --global user.email dongkaige@gmail.com
