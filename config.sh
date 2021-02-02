@@ -12,6 +12,10 @@ sudo timedatectl set-local-rtc true
 echo "请配置 rofi 与 flameshot快捷方式"
 
 # 配置v2ray
+# For ubuntu: https://github.com/v2fly/fhs-install-v2ray
+# (Must run by root): sudo bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
+# /usr/local/etc/v2ray/config.json
+
 sudo mv ./v2ray_config.json /etc/v2ray/config.json
 sudo systemctl enable v2ray
 sudo systemctl restart v2ray
@@ -26,7 +30,7 @@ git config --global user.email dongkaige@gmail.com
 
 # 安装zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-mv ./zshrc ~/.zshrc
+cp ./zshrc ~/.zshrc
 
 # pure theme
 mkdir -p "$HOME/.zsh"
