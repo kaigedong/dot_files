@@ -70,6 +70,8 @@ echo "请在重启后，设置输入法引擎"
 # 配置alacritty TODO: add fonts
 mkdir -p ~/.config/alacritty
 cp ./alacritty.yml ~/.config/alacritty/
+echo "Download nerd fonts: https://www.nerdfonts.com/"
+
 # theme:
 wget https://codeload.github.com/dracula/alacritty/zip/master
 unzip alacritty-master.zip
