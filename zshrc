@@ -16,11 +16,11 @@ autoload -U promptinit; promptinit
 export PURE_CMD_MAX_EXEC_TIME=0
 prompt pure
 
-
-#ZSH_THEME="spaceship"
-#SPACESHIP_TIME_SHOW=true
-#SPACESHIP_TIME_SHOW=true
-#SPACESHIP_DIR_TRUNC=0
+HISTSIZE=10000000
+SAVEHIST=10000000
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -81,7 +81,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(emacs extract git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(emacs extract git zsh-autosuggestions zsh-syntax-highlighting cargo)
 
 source $ZSH/oh-my-zsh.sh
 
