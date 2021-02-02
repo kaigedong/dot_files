@@ -76,6 +76,8 @@ echo "请在重启后，设置输入法引擎"
 mkdir -p ~/.config/alacritty
 cp ./alacritty.yml ~/.config/alacritty/
 echo "Download nerd fonts: https://www.nerdfonts.com/"
+# nerd-fonts-noto-sans-mono.git
+# https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=nerd-fonts-noto-sans-mono
 
 # 微软雅黑
 echo "Download Yahei: https://www.download-free-fonts.com/"
