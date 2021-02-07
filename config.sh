@@ -68,7 +68,11 @@ QT_IM_MODULE  DEFAULT=fcitx
 XMODIFIERS    DEFAULT=\@im=fcitx
 SDL_IM_MODULE DEFAULT=fcitx" >> ~/.pam_environment
 
+# ubuntu:
+# sudo apt install fcitx5 fcitx5-chinese-addons kde-config-fcitx5
+# ubuntu: sudo ln -s /usr/share/applications/org.fcitx.Fcitx5.desktop  /etc/xdg/autostart/org.fcitx.Fcitx5.desktop
 cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
+
 echo "输入法将在重启后生效"
 echo "请在重启后，设置输入法引擎"
 
