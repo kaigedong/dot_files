@@ -18,4 +18,4 @@ alias top="glances"
 source $OMF_PATH/init.fish
 source $OMF_PATH/pkg/fish/conf.d/dracula.fish
 
-starship init fish | source
+# starship init fish | source
