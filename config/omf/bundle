@@ -1,5 +1,4 @@
 package config
-package emacs
 package https://github.com/dracula/fish
 package tmux-zen
 theme default
