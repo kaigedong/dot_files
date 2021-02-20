@@ -4,6 +4,8 @@ package foreign-env
 package https://github.com/dracula/fish
 package nvm
 package pyenv
+package spark
 package tmux-zen
+package weather
 theme default
 theme pure

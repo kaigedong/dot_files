@@ -9,7 +9,8 @@ sudo echo "zh_CN.UTF-8 UTF-8" >> locale.gen
 sudo locale-gen
 
 # 安装必要软件
-sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime flameshot rofi go lsd bat
+sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
+    flameshot rofi go lsd bat fish
 
 # 将硬件时间设置为localtime
 sudo timedatectl set-local-rtc true
@@ -33,6 +34,11 @@ echo "Set proxy role: https://raw.githubusercontent.com/gfwlist/gfwlist/master/g
 # 设置git
 git config --global user.name bobo
 git config --global user.email dongkaige@gmail.com
+
+# 安装omf
+curl -L https://get.oh-my.fish | fish
+cp ./.config/omf/* ~/.config/omf/
+omf update
 
 # 安装zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
