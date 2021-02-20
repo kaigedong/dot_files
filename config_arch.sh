@@ -13,16 +13,16 @@ sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime 
 
 # 将硬件时间设置为localtime
 sudo timedatectl set-local-rtc true
-sudo timedatectl set-ntp true
 
 echo "请配置 rofi 与 flameshot快捷方式"
+echo "rofi: rofi -combi-modi window,drun,ssh,run -font \"hack 11\" -show combi -icon-theme "Papirus" -show-icons -sidebar-mode -dpi 200"
 
 # 配置v2ray
 # For ubuntu: https://github.com/v2fly/fhs-install-v2ray
 # (Must run by root): sudo bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
 # /usr/local/etc/v2ray/config.json
 
-sudo mv ./v2ray_config.json /etc/v2ray/config.json
+sudo cp ./v2ray_config.json /etc/v2ray/config.json
 sudo systemctl enable v2ray
 sudo systemctl restart v2ray
 export http_proxy=http://127.0.0.1:10809
@@ -36,18 +36,16 @@ git config --global user.email dongkaige@gmail.com
 
 # 安装zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp ./zshrc ~/.zshrc
-
+cp .zshrc ~/.zshrc
 # pure theme
 mkdir -p "$HOME/.zsh"
 git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
-
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # 安装rust
 mkdir ~/.cargo
-cp ./cargo_config ~/.cargo/config
+cp ./.cargo/config ~/.cargo/config
 
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 source ~/.cargo/env
@@ -60,13 +58,12 @@ tldr --update
 # 配置emacs
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
-cp ./doom.d/* ~/.doom.d/
+cp .doom.d/* ~/.doom.d/
 
 # 配置tmux
-cd ~
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
-cp .tmux/.tmux.conf.local .
+git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
+cp ~/.tmux/.tmux.conf.local ~/
 
 # 配置fcitx5
 echo "GTK_IM_MODULE DEFAULT=fcitx
@@ -84,7 +81,7 @@ echo "请在重启后，设置输入法引擎"
 
 # 配置alacritty
 mkdir -p ~/.config/alacritty
-cp ./alacritty.yml ~/.config/alacritty/
+cp .config/alacritty/* ~/.config/alacritty/
 echo "Download nerd fonts: https://www.nerdfonts.com/"
 # nerd-fonts-noto-sans-mono.git
 # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=nerd-fonts-noto-sans-mono
@@ -92,23 +89,16 @@ echo "Download nerd fonts: https://www.nerdfonts.com/"
 # 微软雅黑
 echo "Download Yahei: https://www.download-free-fonts.com/"
 
-# alacritty theme:
-wget https://codeload.github.com/dracula/alacritty/zip/master
-unzip alacritty-master.zip
-cd alacritty-master
-cp dracula.yml ~/.config/alacritty
-cd ../ && rm -r alacritty-master.zip alacritty-master
+# ssh
+mkdir ~/.ssh
+cp .ssh/* ~/.ssh/
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-cd ~/.pyenv && src/configure && make -C src
+cd ~/.pyenv && src/configure && make -C src # make sure cd is in last
 
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
-
-# ssh
-mkdir ~/.ssh
-cp ./ssh/* ~/.ssh/
 
 # gnome插件
 echo "请登录firefox浏览器..."
