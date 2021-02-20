@@ -13,6 +13,7 @@ sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime 
 
 # 将硬件时间设置为localtime
 sudo timedatectl set-local-rtc true
+sudo timedatectl set-ntp true
 
 echo "请配置 rofi 与 flameshot快捷方式"
 
