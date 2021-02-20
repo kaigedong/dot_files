@@ -1,6 +1,9 @@
 package config
 package emacs
+package foreign-env
 package https://github.com/dracula/fish
+package nvm
+package pyenv
 package tmux-zen
 theme default
 theme pure
