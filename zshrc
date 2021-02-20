@@ -7,9 +7,9 @@ else
   tmux attach -t $session 2>/dev/null
 fi
 
-if ! [ -n "$TMUX" ]; then
-  exit
-fi
+# if ! [ -n "$TMUX" ]; then
+#   exit
+# fi
 
 # Theme
 fpath+=$HOME/.zsh/pure
