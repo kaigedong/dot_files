@@ -23,7 +23,7 @@ echo "rofi: rofi -combi-modi window,drun,ssh,run -font \"hack 11\" -show combi -
 # (Must run by root): sudo bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
 # /usr/local/etc/v2ray/config.json
 
-sudo cp ./v2ray_config.json /etc/v2ray/config.json
+sudo ln ./v2ray_config.json /etc/v2ray/config.json
 sudo systemctl enable v2ray
 sudo systemctl restart v2ray
 export http_proxy=http://127.0.0.1:10809
@@ -37,7 +37,7 @@ git config --global user.email dongkaige@gmail.com
 
 # 安装omf
 curl -L https://get.oh-my.fish | fish
-cp ./.config/omf/* ~/.config/omf/
+ln .config/omf/* ~/.config/omf/
 omf update
 
 # 安装zsh
@@ -51,7 +51,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 # 安装rust
 mkdir ~/.cargo
-cp ./.cargo/config ~/.cargo/config
+ln .cargo/config ~/.cargo/config
 
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 source ~/.cargo/env
@@ -64,7 +64,7 @@ tldr --update
 # 配置emacs
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
 ~/.emacs.d/bin/doom install
-cp .doom.d/* ~/.doom.d/
+ln .doom.d/* ~/.doom.d/
 
 # 配置tmux
 git clone https://github.com/gpakosz/.tmux.git ~/.tmux
@@ -87,7 +87,7 @@ echo "请在重启后，设置输入法引擎"
 
 # 配置alacritty
 mkdir -p ~/.config/alacritty
-cp .config/alacritty/* ~/.config/alacritty/
+ln .config/alacritty/* ~/.config/alacritty/
 echo "Download nerd fonts: https://www.nerdfonts.com/"
 # nerd-fonts-noto-sans-mono.git
 # https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=nerd-fonts-noto-sans-mono
