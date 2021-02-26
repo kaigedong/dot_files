@@ -40,8 +40,6 @@ tmux_conf_new_session_prompt=false
 
 # -- display -------------------------------------------------------------------
 
-setw -g automatic-rename off   # rename window to reflect current program
-
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
 #  - false (default)
