@@ -10,7 +10,7 @@ sudo locale-gen
 
 # 安装必要软件
 sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
-    flameshot rofi go lsd bat fish
+    flameshot rofi go lsd bat fish i3-wm polybar
 
 # 将硬件时间设置为localtime
 sudo timedatectl set-local-rtc true
