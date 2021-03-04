@@ -98,6 +98,8 @@ echo "Download Yahei: https://www.download-free-fonts.com/"
 # ssh
 mkdir ~/.ssh
 cp .ssh/* ~/.ssh/
+chmod 400 ~/.ssh/id_rsa
+ssh-add
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
