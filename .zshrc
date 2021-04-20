@@ -27,6 +27,7 @@ SAVEHIST=10000000
 export ZSH="/home/bobo/.oh-my-zsh"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PYENV_ROOT/bin:$GOPATH/bin:/home/bobo/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 export PET_GITHUB_ACCESS_TOKEN="1ad4eebf13422ffe4c0f132d6d2aeca5ef77ce25"
 
@@ -53,7 +54,7 @@ export NVM_DIR="$HOME/.nvm"
 export npm_config_proxy=http://127.0.0.1:10809
 
 #GOlang
-export GOPATH="/usr/local/go"
+export GOPATH="$HOME/go"
 export GO111MODULE=on
 export GOPROXY=https://mirrors.aliyun.com/goproxy/
 # CGO_ENABLED=1 leads to faster, smaller builds & runtimes
