@@ -5,18 +5,18 @@ sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syyu
 
 # 本地化文本编码
-sudo echo "zh_CN.UTF-8 UTF-8" >> locale.gen
+sudo echo "zh_CN.UTF-8 UTF-8" >>locale.gen
 sudo locale-gen
 
 # 安装必要软件
 sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
-    flameshot rofi go lsd bat fish i3-wm polybar feh
+	flameshot rofi go lsd bat fish i3-wm polybar feh
 
 # 将硬件时间设置为localtime
 sudo timedatectl set-local-rtc true
 
 echo "请配置 rofi 与 flameshot快捷方式"
-echo "rofi: rofi -combi-modi window,drun,ssh,run,combi -font \"hack 11\" -show combi -icon-theme \"Papirus\" -show-icons -sidebar-mode -dpi 200"
+echo "rofi: rofi -combi-modi run,drun -font 'hack 11' -show combi -icon-theme 'Papirus' -show-icons -dpi 200"
 
 # 配置v2ray
 # For ubuntu: https://github.com/v2fly/fhs-install-v2ray
@@ -75,7 +75,7 @@ cp ~/.tmux/.tmux.conf.local ~/
 echo "GTK_IM_MODULE DEFAULT=fcitx
 QT_IM_MODULE  DEFAULT=fcitx
 XMODIFIERS    DEFAULT=\@im=fcitx
-SDL_IM_MODULE DEFAULT=fcitx" >> ~/.pam_environment
+SDL_IM_MODULE DEFAULT=fcitx" >>~/.pam_environment
 
 # ubuntu:
 # sudo apt install fcitx5 fcitx5-chinese-addons kde-config-fcitx5

@@ -26,12 +26,10 @@ SAVEHIST=10000000
 
 export ZSH="/home/bobo/.oh-my-zsh"
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PYENV_ROOT/bin:$GOPATH/bin:/home/bobo/bin:$PATH"
-export PATH="$HOME/go/bin:$PATH"
-
 export PET_GITHUB_ACCESS_TOKEN="1ad4eebf13422ffe4c0f132d6d2aeca5ef77ce25"
 
 # ~/.config/kioslaverc stores KDE proxy config
+# export http_proxy="http://192.168.1.183:5678"
 export http_proxy="http://127.0.0.1:10809"
 export https_proxy=$http_proxy
 export HTTP_PROXY=$http_proxy
@@ -52,6 +50,8 @@ export NVM_DIR="$HOME/.nvm"
 # npm install -g yarn
 # alias npm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
 export npm_config_proxy=http://127.0.0.1:10809
+# npm config set registry https://registry.npm.taobao.org
+# npm install -g something --verbose # 显示下载细节
 
 #GOlang
 export GOPATH="$HOME/go"
@@ -61,10 +61,13 @@ export GOPROXY=https://mirrors.aliyun.com/goproxy/
 # it can dynamically load the host OS's native libraries (glibc etc.)
 export CGO_ENABLED=0
 
+export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PYENV_ROOT/bin:$GOPATH/bin:$HOME/bin:$PATH"
+
 # Standard plugins can be found in $ZSH/plugins/
 plugins=(emacs extract git zsh-autosuggestions zsh-syntax-highlighting cargo)
 source $ZSH/oh-my-zsh.sh
 
+# alias emacs="emacs -nw"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="lsd"
@@ -74,11 +77,16 @@ alias grep="rg"
 alias less="bat -p"
 alias baidunetdisk="/usr/lib/baidunetdisk/baidunetdisk"
 alias top="glances"
+alias open="xdg-open"
 
 # A tool to infer progress speed
 # sudo nethogs
 
 eval "$(pyenv init -)"
-# screenfetch -A 'Arch Linux' # | lolcat
 # ibus engine libpinyin
 typeset -U PATH
+# macchina # better screenfetch written in rust
+# screenfetch -A 'Arch Linux' # | lolcat
+
+# alsamixer # 命令行调节声音大小
+# xdg-mime query default inode/directory # 查看默认的文件管理器
