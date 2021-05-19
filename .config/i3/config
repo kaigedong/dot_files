@@ -60,7 +60,7 @@ bindsym $mod+Shift+q kill
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
-bindcode $mod+40 exec  "rofi -combi-modi run,drun -font 'hack 11' -show combi -icon-theme 'Papirus' -show-icons -dpi 200"
+bindcode $mod+40 exec  "rofi -show combi -combi-modi window,drun,run,ssh -modi combi -show-icons -dpi 180 -icon-theme 'Papirus'"
 
 # change focus
 bindsym $mod+h focus left
