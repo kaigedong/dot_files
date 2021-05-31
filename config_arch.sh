@@ -10,7 +10,7 @@ sudo locale-gen
 
 # 安装必要软件
 sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
-	flameshot rofi go lsd bat fish i3-wm polybar feh
+	flameshot rofi go lsd bat fish i3-wm polybar feh tig
 
 # 将硬件时间设置为localtime
 sudo timedatectl set-local-rtc true
@@ -107,6 +107,9 @@ cd ~/.pyenv && src/configure && make -C src # make sure cd is in last
 
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+
+# emacs 需要安装依赖以format json等
+npm install --global prettier @prettier/plugin-php prettier-plugin-solidity
 
 # gnome插件
 echo "请登录firefox浏览器..."

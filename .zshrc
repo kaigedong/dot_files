@@ -64,7 +64,7 @@ export CGO_ENABLED=0
 export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PYENV_ROOT/bin:$GOPATH/bin:$HOME/bin:$PATH"
 
 # Standard plugins can be found in $ZSH/plugins/
-plugins=(emacs extract git zsh-autosuggestions zsh-syntax-highlighting cargo)
+plugins=(emacs extract git zsh-autosuggestions zsh-syntax-highlighting cargo z)
 source $ZSH/oh-my-zsh.sh
 
 # alias emacs="emacs -nw"
