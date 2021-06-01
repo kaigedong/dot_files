@@ -12,7 +12,7 @@ sudo locale-gen
 sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
 	flameshot rofi go lsd bat fish i3-wm polybar feh tig sway
 
-# sway: 修改 /usr/share/wayland-sessions, 删掉 WaylandEnable=false
+# sway: 修改 /etc/gdm/custom.conf, 删掉 WaylandEnable=false
 
 # 将硬件时间设置为localtime
 sudo timedatectl set-local-rtc true
