@@ -3,6 +3,8 @@ echo "Initing manjaro..."
 # 设置源
 sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syyu
+# 恢复默认源
+# sudo pacman-mirrors --country all --api --protocol all --set-branch stable && sudo pacman -Syyu
 
 # 本地化文本编码
 sudo echo "zh_CN.UTF-8 UTF-8" >>locale.gen
