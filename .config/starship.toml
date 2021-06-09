@@ -1,38 +1,32 @@
-[directory]
-truncation_length=0
-truncate_to_repo=true
+# Inserts a blank line between shell prompts
+add_newline = true
 
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[➜](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+# Disable the package module, hiding it from the prompt completely
 [package]
-disabled=true
-[erlang]
-disabled=true
-[golang]
-disabled=true
-[helm]
-disabled=true
-[java]
-disabled=true
-[julia]
-disabled=true
-[kotlin]
-disabled=true
-[nim]
-disabled=true
-[nodejs]
-disabled=true
-[ocaml]
-disabled=true
-[perl]
-disabled=true
-[php]
-disabled=true
-[purescript]
-disabled=true
-[python]
-disabled=true
-[ruby]
-disabled=true
+disabled = true
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
 [rust]
-disabled=true
-[swift]
-disabled=true
+disabled = true
+
+[nodejs]
+disabled = true
+
+[shell]
+disabled = true
+
+[python]
+disabled = true
+
+[time]
+disabled = false
+format = '🕙[\[ $time \]]($style) '
+time_format = "%T"
+utc_time_offset = "+8"
