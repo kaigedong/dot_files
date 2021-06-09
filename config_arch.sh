@@ -20,7 +20,7 @@ sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime 
 sudo timedatectl set-local-rtc true
 
 echo "请配置 rofi 与 flameshot快捷方式"
-echo "rofi: rofi -combi-modi run,drun -font 'hack 11' -show combi -icon-theme 'Papirus' -show-icons -dpi 200"
+echo "rofi: rofi -show combi -combi-modi window,drun,run,ssh -modi combi -show-icons -dpi 180 -icon-theme 'Papirus'"
 
 # 配置v2ray
 # For ubuntu: https://github.com/v2fly/fhs-install-v2ray
