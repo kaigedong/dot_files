@@ -12,7 +12,7 @@ sudo locale-gen
 
 # 安装必要软件
 sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
-	flameshot rofi go lsd bat fish i3-wm polybar feh tig sway
+	flameshot rofi go lsd bat fish i3-wm polybar feh tig sway papirus-icon-theme
 
 # sway: 修改 /etc/gdm/custom.conf, 删掉 WaylandEnable=false
 
