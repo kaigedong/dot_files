@@ -82,7 +82,7 @@ alias open="xdg-open"
 # A tool to infer progress speed
 # sudo nethogs
 
-eval "$(pyenv init -)"
+eval "$(pyenv init --path)"
 # ibus engine libpinyin
 typeset -U PATH
 # macchina # better screenfetch written in rust
