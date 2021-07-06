@@ -1,5 +1,8 @@
 echo "Initing manjaro..."
 
+# 将硬件时间设置为localtime
+sudo timedatectl set-local-rtc true
+
 # 设置源
 sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syyu
@@ -11,28 +14,23 @@ sudo echo "zh_CN.UTF-8 UTF-8" >>locale.gen
 sudo locale-gen
 
 # 安装必要软件
-sudo pacman -S v2ray code emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
-	flameshot rofi go lsd bat fish i3-wm polybar feh tig sway papirus-icon-theme
+sudo pacman -S emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
+	flameshot rofi go lsd bat i3-wm polybar feh tig papirus-icon-theme
+
+yay -S visual-studio-code-bin xray-bin rust-analyzer
 
 # sway: 修改 /etc/gdm/custom.conf, 删掉 WaylandEnable=false
-
-# 将硬件时间设置为localtime
-sudo timedatectl set-local-rtc true
 
 echo "请配置 rofi 与 flameshot快捷方式"
 echo "rofi: rofi -show combi -combi-modi window,drun,run,ssh -modi combi -show-icons -dpi 180 -icon-theme 'Papirus'"
 
-# 配置v2ray
+# Ubuntu v2ray
 # For ubuntu: https://github.com/v2fly/fhs-install-v2ray
 # (Must run by root): sudo bash <(curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh)
 # /usr/local/etc/v2ray/config.json
 
-sudo ln ./v2ray_config.json /etc/v2ray/config.json
-sudo systemctl enable v2ray
-sudo systemctl restart v2ray
 export http_proxy=http://127.0.0.1:10809
 export https_proxy=http://127.0.0.1:10809
-
 echo "Set proxy role: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
 
 # 设置git
@@ -47,21 +45,19 @@ omf update
 # 安装zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp .zshrc ~/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
 # pure theme
-mkdir -p "$HOME/.zsh"
-git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
+# mkdir -p "$HOME/.zsh"
+# git clone https://github.com/sindresorhus/pure.git "$HOME/.zsh/pure"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 # 安装rust
-mkdir ~/.cargo
-ln .cargo/config ~/.cargo/config
-
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 source ~/.cargo/env
-cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.0
-# cargo install
-rustup install nightly
+cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.1 --locked
+
 cargo install tealdeer ripgrep fd-find
 tldr --update
 
@@ -109,11 +105,13 @@ ssh-add
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 cd ~/.pyenv && src/configure && make -C src # make sure cd is in last
 
+echo 'eval "$(pyenv init --path)"' >>~/.zshrc
+
 # nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 
 # emacs 需要安装依赖以format json等
-npm install --global prettier @prettier/plugin-php prettier-plugin-solidity
+npm install --global prettier @prettier/plugin-php prettier-plugin-solidity prettier-plugin-toml
 
 # gnome插件
 echo "请登录firefox浏览器..."
