@@ -7,9 +7,9 @@ else
   tmux attach -t $session 2>/dev/null
 fi
 
-# if ! [ -n "$TMUX" ]; then
-#   exit
-# fi
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+prompt pure
 
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_FIND_NO_DUPS
@@ -46,6 +46,8 @@ export NVM_DIR="$HOME/.nvm"
 export npm_config_proxy=http://127.0.0.1:10809
 # npm config set registry https://registry.npm.taobao.org
 # npm install -g something --verbose # 显示下载细节
+# yarn config set httpProxy http://127.0.0.1:10809
+# yarn config set httpsProxy http://127.0.0.1:10809
 
 #GOlang
 export GOPATH="$HOME/go"
@@ -58,10 +60,10 @@ export CGO_ENABLED=0
 export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PYENV_ROOT/bin:$GOPATH/bin:$HOME/bin:$PATH"
 
 # Standard plugins can be found in $ZSH/plugins/
-plugins=(emacs extract git zsh-autosuggestions zsh-syntax-highlighting cargo z)
+plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting cargo z)
 source $ZSH/oh-my-zsh.sh
 
-# alias emacs="emacs -nw"
+alias emacs="emacs -nw"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="lsd"
@@ -84,5 +86,3 @@ typeset -U PATH
 
 # alsamixer # 命令行调节声音大小
 # xdg-mime query default inode/directory # 查看默认的文件管理器
-
-ZSH_THEME="powerlevel10k/powerlevel10k"

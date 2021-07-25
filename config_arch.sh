@@ -33,6 +33,14 @@ export http_proxy=http://127.0.0.1:10809
 export https_proxy=http://127.0.0.1:10809
 echo "Set proxy role: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
 
+# 设置apt代理
+# sudo touch /etc/apt/apt.conf.d/proxy.conf
+Acquire {
+  HTTP::proxy "http://127.0.0.1:10809";
+  HTTPS::proxy "http://127.0.0.1:10809";
+}
+
+
 # 设置git
 git config --global user.name bobo
 git config --global user.email dongkaige@gmail.com
