@@ -37,6 +37,9 @@ export WASM_BUILD_TYPE=release # For substrate
 # export OPENSSL_LIB_DIR="/usr/lib/openssl-1.0"
 # export OPENSSL_INCLUDE_DIR="/usr/include/openssl-1.0"
 
+# color man use bat
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
