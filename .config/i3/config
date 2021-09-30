@@ -193,7 +193,7 @@ bindsym $mod+r mode "resize"
 
 exec --no-startup-id xrandr --output eDP-1 --off # 关闭笔记本屏幕。xrandr可以查看屏幕名称
 # 恢复笔记本显示 xrandr --output LVDS1 --auto
-exec --no-startup-id bash ~/.config/polybar/launch.sh --hack
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id polybar --reload main
 exec --no-startup-id qbittorrent
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper/wallhaven-8ogod1.jpg
