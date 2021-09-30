@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "kaigedong"
-      user-mail-address "dongkaige@gmail.com")
+(setq user-full-name "John Doe"
+      user-mail-address "john@doe.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -19,17 +19,16 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-;; (setq doom-font (font-spec :family "NotoSansMono Nerd Font" :size 12 :weight 'semi-light)
+;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-font (font-spec :family "NotoSansMono Nerd Font" :size 12 :weight 'semi-light)
-      doom-variable-pitch-font (font-spec :family "sans" :size 13))
+(setq doom-font (font-spec :family "NotoSansMono Nerd Font" :size 16 :weight 'semi-light)
+      doom-variable-pitch-font (font-spec :family "sans" :size 17))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 ;; (setq doom-theme 'doom-one)
-
 (setq doom-theme 'doom-dracula)
 
 ;; If you use `org' and don't want your org files in the default location below,
@@ -57,18 +56,3 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-
-(setq lsp-rust-server 'rust-analyzer)
-(setq lsp-rust-rls-server-command 'rls) ;; 这个似乎不必要有
-(setq lsp-rust-analyzer-inlay-hints-mode t)  ;;这个不能放到下面，否则似乎不能被初始化为t
-
-(use-package! lsp-rust
-  :config
-  (setq! lsp-rust-analyzer-cargo-watch-enable t
-         ;; lsp-rust-analyzer-cargo-watch-command "build"
-         lsp-rust-analyzer-proc-macro-enable t
-         lsp-rust-analyzer-cargo-load-out-dirs-from-check t
-         lsp-rust-analyzer-server-display-inlay-hints t
-         lsp-rust-analyzer-display-parameter-hints t
-         lsp-rust-analyzer-display-chaining-hints t
-))
