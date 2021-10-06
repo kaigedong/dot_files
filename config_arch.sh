@@ -18,7 +18,7 @@ sudo locale-gen
 sudo pacman -S emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
 	flameshot rofi go lsd bat i3-wm polybar feh tig papirus-icon-theme
 
-yay -S visual-studio-code-bin xray-bin rust-analyzer nerd-fonts-noto-sans-mono
+yay -S visual-studio-code-bin xray-bin rust-analyzer nerd-fonts-noto-sans-mono bluez-utils
 
 # sway: 修改 /etc/gdm/custom.conf, 删掉 WaylandEnable=false
 
