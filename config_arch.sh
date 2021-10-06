@@ -78,6 +78,9 @@ git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 cp ~/.tmux/.tmux.conf.local ~/
 
+cp -r .config/i3 ~/.config/i3
+cp -r .config/polybar ~/.config/polybar
+
 # 配置fcitx5
 echo "GTK_IM_MODULE DEFAULT=fcitx
 QT_IM_MODULE  DEFAULT=fcitx
