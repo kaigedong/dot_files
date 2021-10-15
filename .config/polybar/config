@@ -31,7 +31,7 @@ font-4 = "Noto Sans:size=11;1"
 
 modules-left = date ewmh xwindow
 modules-center =
-modules-right = wlan networkspeedup networkspeeddown bluetooth cpu battery
+modules-right = wlan networkspeedup networkspeeddown bluetooth cpu battery pulseaudio
 
 tray-position = right
 tray-padding = 2
@@ -364,3 +364,22 @@ animation-discharging-framerate = 500
 screenchange-reload = true
 
 ; vim:ft=dosini
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_01_00.1.hdmi-stereo
+use-ui-max = true
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+; Right and Middle click
+click-right = pavucontrol
