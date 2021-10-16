@@ -55,7 +55,7 @@ export npm_config_proxy=http://127.0.0.1:10809
 #GOlang
 export GOPATH="$HOME/go"
 export GO111MODULE=on
-export GOPROXY=https://mirrors.aliyun.com/goproxy/
+# export GOPROXY=https://mirrors.aliyun.com/goproxy/
 # CGO_ENABLED=1 leads to faster, smaller builds & runtimes
 # it can dynamically load the host OS's native libraries (glibc etc.)
 export CGO_ENABLED=0
