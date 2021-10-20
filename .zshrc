@@ -22,6 +22,9 @@ export ZSH="/home/bobo/.oh-my-zsh"
 export PYENV_ROOT="$HOME/.pyenv"
 export PET_GITHUB_ACCESS_TOKEN="1ad4eebf13422ffe4c0f132d6d2aeca5ef77ce25"
 
+export LANGUAGE=en_US
+export LANG=en_US.UTF-8
+
 # ~/.config/kioslaverc stores KDE proxy config
 # export http_proxy="http://192.168.1.183:5678"
 export http_proxy="http://127.0.0.1:10809"
