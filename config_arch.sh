@@ -5,7 +5,7 @@ sudo timedatectl set-local-rtc true
 sudo timedatectl set-ntp true
 
 # 设置源
-sudo pacman-mirrors -i -c China -m rank
+# For Manjaro: sudo pacman-mirrors -i -c China -m rank
 sudo pacman -Syyu
 # 恢复默认源
 # sudo pacman-mirrors --country all --api --protocol all --set-branch stable && sudo pacman -Syyu
@@ -18,7 +18,7 @@ sudo locale-gen
 sudo pacman -S emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
 	flameshot rofi go lsd bat i3-wm polybar feh tig papirus-icon-theme
 
-yay -S visual-studio-code-bin xray-bin rust-analyzer nerd-fonts-noto-sans-mono bluez-utils
+paru -S visual-studio-code-bin xray-bin rust-analyzer nerd-fonts-noto-sans-mono fnm
 
 # sway: 修改 /etc/gdm/custom.conf, 删掉 WaylandEnable=false
 
@@ -38,16 +38,11 @@ echo "rofi: rofi -show combi -combi-modi window,drun,run,ssh -modi combi -show-i
 
 export http_proxy=http://127.0.0.1:10809
 export https_proxy=http://127.0.0.1:10809
-echo "Set proxy role: https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt"
+# https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 
 # 设置git
 git config --global user.name kaigedong
 git config --global user.email dongkaige@gmail.com
-
-# 安装omf
-# curl -L https://get.oh-my.fish | fish
-# ln .config/omf/* ~/.config/omf/
-# omf update
 
 # 安装zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -117,7 +112,8 @@ cd ~/.pyenv && src/configure && make -C src # make sure cd is in last
 # echo 'eval "$(pyenv init --path)"' >>~/.zshrc
 
 # nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+eval "$(fnm env)"
 
 # emacs 需要安装依赖以format json等
 npm install --global prettier @prettier/plugin-php prettier-plugin-solidity prettier-plugin-toml
