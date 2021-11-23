@@ -33,8 +33,6 @@ export HTTP_PROXY=$http_proxy
 export HTTPS_PROXY=$http_proxy
 
 #rustlang
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static        # update toolchain
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup # update rustup
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
 export WASM_BUILD_TYPE=release # For substrate
 # export OPENSSL_LIB_DIR="/usr/lib/openssl-1.0"
