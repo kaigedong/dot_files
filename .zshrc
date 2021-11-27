@@ -70,7 +70,7 @@ source $ZSH/oh-my-zsh.sh
 alias emacs="emacs -nw"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="lsd"
+alias ls="/usr/bin/lsd"
 alias la="ls -lth --date \"+%Y-%m-%d %H:%M:%S\""
 alias lb="ls -lh"
 alias grep="rg"
@@ -90,3 +90,5 @@ typeset -U PATH
 
 # alsamixer # 命令行调节声音大小
 # xdg-mime query default inode/directory # 查看默认的文件管理器
+
+eval "$(fnm env)"
