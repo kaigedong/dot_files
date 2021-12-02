@@ -11,6 +11,8 @@ echo "zh_CN.UTF-8 UTF-8" >>/etc/locale.gen
 sudo locale-gen
 ```
 
+## AUR source from tuna
+
 ## 安装并配置 xray-bin
 
 ```
@@ -42,4 +44,5 @@ echo "请配置gnome插件..."
 echo "URL1: https://extensions.gnome.org/extension/2986/runcat/"
 echo "URL2: https://extensions.gnome.org/extension/3724/net-speed-simplified/"
 echo "URL3: https://extensions.gnome.org/extension/261/kimpanel/"
+echo "URL4: https://extensions.gnome.org/extension/723/pixel-saver/"
 ```
