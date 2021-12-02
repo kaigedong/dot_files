@@ -40,6 +40,7 @@ ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 echo "GTK_IM_MODULE DEFAULT=fcitx
 QT_IM_MODULE  DEFAULT=fcitx
 XMODIFIERS    DEFAULT=\@im=fcitx
+INPUT_METHOD  DEFAULT=fcitx
 SDL_IM_MODULE DEFAULT=fcitx" >>~/.pam_environment
 
 cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
