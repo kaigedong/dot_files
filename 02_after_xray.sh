@@ -1,7 +1,7 @@
 sudo pacman -S emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
     flameshot rofi go lsd bat i3-wm polybar feh tig papirus-icon-theme
 
-paru -S visual-studio-code-bin xray-bin nerd-fonts-noto-sans-mono fnm
+paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono fnm
 
 # 设置git
 git config --global user.name kaigedong
