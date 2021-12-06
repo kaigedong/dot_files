@@ -39,8 +39,6 @@ rofi -show combi -combi-modi window,drun,run,ssh -modi combi -show-icons -dpi 18
 
 ```bash
 # gnome插件
-echo "请登录firefox浏览器..."
-echo "请配置gnome插件..."
 echo "URL1: https://extensions.gnome.org/extension/2986/runcat/"
 echo "URL2: https://extensions.gnome.org/extension/3724/net-speed-simplified/"
 echo "URL3: https://extensions.gnome.org/extension/261/kimpanel/"
