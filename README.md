@@ -44,3 +44,28 @@ echo "URL2: https://extensions.gnome.org/extension/3724/net-speed-simplified/"
 echo "URL3: https://extensions.gnome.org/extension/261/kimpanel/"
 echo "URL4: https://extensions.gnome.org/extension/723/pixel-saver/"
 ```
+
+## gnome 设置桌面快捷方式
+
+```
+# paru -S dconf-editor 可通过这里，查看桌面的快捷方式：
+导航到 /org/gnome/desktop/wm/keybindings 可以看到所有的快捷键。修改对应的即可。
+# 也可以通过命令行进行修改：
+
+# 查看快捷键绑定：
+dconf read /org/gnome/desktop/wm/keybindings/switch-to-workspace-1
+
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-5 "['<Super>5']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-6 "['<Super>6']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-7 "['<Super>7']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-8 "['<Super>8']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-9 "['<Super>9']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-10 "['<Super>0']"
+
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-5 "['<Shift><Super>percent']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-6 "['<Shift><Super>asciicircum']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-7 "['<Shift><Super>ampersand']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-8 "['<Shift><Super>asterisk']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-9 "['<Shift><Super>parenleft']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-10 "['<Shift><Super>parenright']"
+```
