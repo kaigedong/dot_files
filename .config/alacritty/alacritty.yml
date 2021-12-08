@@ -103,6 +103,7 @@ window:
 
 # Font configuration
 font:
+  size: 13
   # Normal (roman) font face
   normal:
     # Font family
@@ -116,7 +117,6 @@ font:
     # The `style` can be specified to pick a specific face.
     #style: Regular
     style: Regular
-    size: 17
 
   # Bold font face
   bold:
@@ -128,7 +128,6 @@ font:
 
     # The `style` can be specified to pick a specific face.
     style: Bold
-    size: 17
 
   # Italic font face
   italic:
@@ -140,7 +139,6 @@ font:
 
     # The `style` can be specified to pick a specific face.
     style: Italic
-    size: 17
 
   # Bold italic font face
   bold_italic:
@@ -153,7 +151,6 @@ font:
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
     style: Bold Italic
-    size: 17
 
 # Point size
 #size: 11.0
