@@ -69,3 +69,6 @@ dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-8 "['<Shift><Sup
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-9 "['<Shift><Super>parenleft']"
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-10 "['<Shift><Super>parenright']"
 ```
+
+## git 配置GPG
+TODO
