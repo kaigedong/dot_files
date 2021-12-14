@@ -70,5 +70,12 @@ dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-9 "['<Shift><Sup
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-10 "['<Shift><Super>parenright']"
 ```
 
-## git 配置GPG
-TODO
+## git 配置 GPG
+
+参考：[](https://docs.github.com/cn/authentication/managing-commit-signature-verification/checking-for-existing-gpg-keys)
+
+注意！一定要配置
+
+```bash
+  git config --global commit.gpgsign true
+```

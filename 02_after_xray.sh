@@ -9,6 +9,7 @@ paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono fnm watchexec jq
 # 设置git
 git config --global user.name kaigedong
 git config --global user.email dongkaige@gmail.com
+git config --global commit.gpgsign true
 
 # 安装oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
