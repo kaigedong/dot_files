@@ -77,5 +77,5 @@ dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-10 "['<Shift><Su
 注意！一定要配置
 
 ```bash
-  git config --global commit.gpgsign true
+git config --global commit.gpgsign true
 ```
