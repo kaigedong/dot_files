@@ -13,7 +13,7 @@ sudo locale-gen
 
 ## AUR source from tuna
 
-## 安装并配置 xray-bin
+## 安装并配置 xray
 
 ```
 export http_proxy=http://127.0.0.1:10809
