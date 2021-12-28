@@ -31,7 +31,7 @@ font-4 = "Noto Sans:size=11;1"
 
 modules-left = date ewmh xwindow
 modules-center =
-modules-right = wlan networkspeedup networkspeeddown bluetooth cpu battery pulseaudio
+modules-right = wlan networkspeedup networkspeeddown cpu battery pulseaudio
 
 tray-position = right
 tray-padding = 2
@@ -199,7 +199,7 @@ udspeed-minwidth = 5
 [module/networkspeedup]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = wlp45s0
+interface = wlan0
 label-connected = "%upspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = ""
@@ -210,7 +210,7 @@ format-connected-underline = #006600
 
 [module/networkspeeddown]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
-interface = wlp45s0
+interface = wlan0
 type = internal/network
 ;interface = enp0s3
 label-connected = "%downspeed:7%"
@@ -251,16 +251,6 @@ label = %date% %time%
 
 ; format-background = #55ff3399
 ; format-foreground = #fff
-
-[module/bluetooth]
-type = custom/script
-exec = ~/.config/polybar/polybar-bluetooth/bluetooth.sh
-interval = 2
-click-left = exec blueberry
-click-right = exec ~/.config/polybar/polybar-bluetooth/toggle_bluetooth.sh
-format-padding = 1
-; format-background = #000000
-format-foreground = #ffffff
 
 [module/github]
 type = internal/github
