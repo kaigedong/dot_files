@@ -31,7 +31,7 @@ font-4 = "Noto Sans:size=11;1"
 
 modules-left = date ewmh xwindow
 modules-center =
-modules-right = wlan networkspeedup networkspeeddown cpu battery pulseaudio
+modules-right = wlan networkspeedup networkspeeddown cpu battery pulseaudio memory
 
 tray-position = right
 tray-padding = 2
@@ -53,19 +53,10 @@ enable-scroll = false
 ; You can get a list of the defined desktops using:
 ; $ xprop -root _NET_DESKTOP_NAMES
 ; Note: Neither <desktop-name> nor <icon> can contain a semicolon (;)
-icon-0 = code;♚
-icon-1 = office;♛
-icon-2 = graphics;♜
-icon-3 = mail;♝
-icon-4 = web;♞
-; icon-default = ♟
-icon-default = ♜
+icon-0 = 1.web;%{F#ff9b93}
+icon-1 = 2.term;%{F#A3BE8C}
+icon-default = 
 
-; Available tags:
-;   <label-monitor>
-;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
-; Default: <label-state>
-; format = <label-state>
 format = <label-state>
 
 ; Available tokens:
@@ -90,7 +81,7 @@ label-active-padding = 1
 ;   %index%
 ; Default: %icon% %name%
 ; label-occupied = %icon%
-label-occupied = 
+label-occupied =
 label-occupied-underline = #555555
 
 ; Available tokens:
@@ -147,10 +138,10 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "🗍 "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = "﬙ "
 format-underline = #4bffdc
 label = %percentage_used:2%%
+format-prefix-foreground = #d19a66
 
 [module/wlan]
 type = internal/network
@@ -167,7 +158,7 @@ ramp-signal-0 = 🌧
 ramp-signal-1 = 🌦
 ramp-signal-2 = 🌥
 ramp-signal-3 = 🌤
-ramp-signal-4 = 🌣
+ramp-signal-4 = ☀
 
 format-packetloss = <animation-packetloss> <label-connected>
 
@@ -185,7 +176,7 @@ interface = enp12s0u1
 interval = 3.0
 
 format-connected-underline = #115511
-format-connected-prefix = "🖧 "
+format-connected-prefix = 🖧
 format-connected-prefix-foreground = ${colors.foreground-alt}
 ; label-connected = %local_ip%
 
