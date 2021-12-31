@@ -2,7 +2,8 @@
 session="workspace"
 tmux has-session -t $session 2>/dev/null
 if [ $? != 0 ]; then
-  tmux new-session -s $session 2>/dev/null
+   # 对终端中nvim色彩显示很重要 
+   TERM=xterm-256color tmux new-session -s $session 2>/dev/null
 else
   tmux attach -t $session 2>/dev/null
 fi
@@ -78,6 +79,7 @@ alias less="bat -p"
 alias baidunetdisk="/usr/lib/baidunetdisk/baidunetdisk"
 alias top="glances"
 alias open="xdg-open"
+# alias tmux="TERM=xterm-256color tmux"
 
 # A tool to infer progress speed
 # sudo nethogs
