@@ -4,6 +4,7 @@ require "user.plugins"
 require "user.colorscheme"
 require "user.cmp"
 require "user.lsp"
+require "user.telescope"
 
 -- 1. 插件安装目录:
 -- ~/.local/share/nvim/site

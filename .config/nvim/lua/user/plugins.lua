@@ -100,6 +100,16 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
+    -- Telescope
+    -- 执行命令: `:Telescope TAB`可以看到所有支持的命令
+    -- :Telescope find_files
+    -- :Telescope live_grep (查找文件内容)
+    -- :Telescope lsp_<TAB> 显示lsp相关的内容，如lsp_definition; lsp_reference
+    -- :Telescope find_files theme=ivy 可选theme:ivy, dropdown, cursor
+    use "nvim-telescope/telescope.nvim"
+    -- telescope 的插件，允许预览图片
+    use 'nvim-telescope/telescope-media-files.nvim'
+
     -- 有些插件可以在Event触发时执行。
     -- 查看Event可以使用 `:help autocmd`
 
