@@ -9,7 +9,6 @@
 -- 3. 如果不用local，则是global的，使用local，只对当前文件有效
 local options = {
     backup = false, -- creates a backup file
-    clipboard = "unnamedplus", -- allows neovim to access the system clipboard
     completeopt = {"menuone", "noselect"}, -- mostly just for cmp
     conceallevel = 0, -- so that `` is visible in markdown files
     fileencoding = "utf-8", -- the encoding written to a file
@@ -25,7 +24,7 @@ local options = {
     updatetime = 300, -- faster completion (4000ms default)
     writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
     cursorline = true, -- highlight the current line
-    signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time 
+    signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
     guifont = "monospace:h17" -- the font used in graphical neovim applications
 }
 
@@ -45,6 +44,7 @@ local options2 = {
     splitright = true, -- force all vertical splits to go to the right of current window
     wrap = false, -- display lines as one long line
     fileencoding = "utf-8", -- the encoding written to a file
+    clipboard = "unnamedplus", -- allows neovim to access the system clipboard
 
     -- 好像没啥作用
     -- scrolloff = 8, -- is one of my fav

@@ -50,6 +50,8 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
     use "numToStr/Comment.nvim" -- Easily comment stuff
+    use "mg979/vim-visual-multi" -- 多光标插件
+    use "tpope/vim-surround" -- surround 插件
 
     -- Lazy loading:
     -- Load on specific commands
@@ -111,6 +113,7 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope.nvim"
     -- telescope 的插件，允许预览图片
     use 'nvim-telescope/telescope-media-files.nvim'
+    use "nvim-telescope/telescope-file-browser.nvim" 
 
     -- Treesitter
     use {
