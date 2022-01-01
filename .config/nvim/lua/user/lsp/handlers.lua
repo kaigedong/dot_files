@@ -16,7 +16,7 @@ M.setup = function()
   local config = {
     -- disable virtual text
     -- 设置为True自动在需要提示的地方显示信息，否则需要<g-l>才显示
-    virtual_text = true,
+    virtual_text = false,
     -- show signs
     signs = {
       active = signs,

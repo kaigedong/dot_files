@@ -11,7 +11,6 @@ lsp_installer.on_server_ready(function(server)
 		capabilities = require("user.lsp.handlers").capabilities,
 	}
 
-
     -- 如果 server_name 匹配时，加载一些配置
     -- 如配置中，出现packages.json(JS项目)时，可以智能提示可用的字段
 	 if server.name == "jsonls" then

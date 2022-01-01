@@ -37,7 +37,7 @@ for k, v in pairs(options) do
 end
 
 local options2 = {
-    cmdheight = 2, -- more space in the neovim command line for displaying messages
+    cmdheight = 1, -- more space in the neovim command line for displaying messages
     -- timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
 
     splitbelow = true, -- force all horizontal splits to go below current window

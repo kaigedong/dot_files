@@ -113,7 +113,7 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope.nvim"
     -- telescope 的插件，允许预览图片
     use 'nvim-telescope/telescope-media-files.nvim'
-    use "nvim-telescope/telescope-file-browser.nvim" 
+    use "nvim-telescope/telescope-file-browser.nvim"
 
     -- Treesitter
     use {
