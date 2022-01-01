@@ -68,6 +68,31 @@ return packer.startup(function(use)
     -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
     use 'folke/tokyonight.nvim'
 
+    -- use 'neovim/nvim-lspconfig'
+    -- use 'hrsh7th/cmp-nvim-lsp'
+
+    -- 使用nvim-cmp作为自动补全插件
+    use 'hrsh7th/nvim-cmp'
+    -- cmp source
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use 'saadparwaiz1/cmp_luasnip'
+    -- cmp source: 显示crates是否是最新版，并lazy-loading
+    use {
+        'saecki/crates.nvim',
+        event = {"BufRead Cargo.toml"},
+        requires = {{'nvim-lua/plenary.nvim'}},
+        config = function()
+            require('crates').setup()
+        end
+    }
+
+    -- nvim-cmp还需要安装snippets插件
+    use 'L3MON4D3/LuaSnip' -- snippet engine
+    -- 支持很多snippets，有rust等.. package.json 中有写
+    use 'rafamadriz/friendly-snippets' -- A bunch of snippets to use
+
     -- 有些插件可以在Event触发时执行。
     -- 查看Event可以使用 `:help autocmd`
 

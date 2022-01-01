@@ -2,6 +2,7 @@ require "user.options"
 require "user.keymaps"
 require "user.plugins"
 require "user.colorscheme"
+require "user.cmp"
 
 -- 1. 插件安装目录:
 -- ~/.local/share/nvim/site
