@@ -21,17 +21,11 @@ local options = {
     showtabline = 2, -- always show tabs
     smartcase = true, -- smart case
     swapfile = false, -- creates a swapfile
-    timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
     undofile = true, -- enable persistent undo
     updatetime = 300, -- faster completion (4000ms default)
     writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-    shiftwidth = 2, -- the number of spaces inserted for each indentation
-    tabstop = 2, -- insert 2 spaces for a tab
     cursorline = true, -- highlight the current line
-    numberwidth = 4, -- set number column width to 2 {default 4}
-    signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
-    scrolloff = 8, -- is one of my fav
-    sidescrolloff = 8,
+    signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time 
     guifont = "monospace:h17" -- the font used in graphical neovim applications
 }
 
@@ -45,16 +39,23 @@ end
 
 local options2 = {
     cmdheight = 2, -- more space in the neovim command line for displaying messages
+    -- timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
+
     splitbelow = true, -- force all horizontal splits to go below current window
     splitright = true, -- force all vertical splits to go to the right of current window
     wrap = false, -- display lines as one long line
     fileencoding = "utf-8", -- the encoding written to a file
+
+    -- 好像没啥作用
+    -- scrolloff = 8, -- is one of my fav
+    -- sidescrolloff = 8,
+
     number = true, -- set numbered lines
-    relativenumber = false, -- set relative numbered lines
     numberwidth = 4, -- set number column width to 2 {default 4}
+
+    relativenumber = false, -- set relative numbered lines
     termguicolors = true, -- set term gui colors (most terminals support this) 开启该选项，可以支持更多颜色
     cursorline = true, -- highlight the current line 高亮当前行
-    relativenumber = false, -- set relative numbered lines
 
     -- Tab的设置
     tabstop = 4, -- Tab 默认显示宽度是 8 个空格,修改Tab显示宽度：1 tab == 4 spaces，不修改按Tab键的行为

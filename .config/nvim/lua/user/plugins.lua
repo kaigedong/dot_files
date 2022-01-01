@@ -78,6 +78,9 @@ return packer.startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'saadparwaiz1/cmp_luasnip'
+    -- 在输入vim.之后，进行提示
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-nvim-lua"
     -- cmp source: 显示crates是否是最新版，并lazy-loading
     use {
         'saecki/crates.nvim',
@@ -92,6 +95,10 @@ return packer.startup(function(use)
     use 'L3MON4D3/LuaSnip' -- snippet engine
     -- 支持很多snippets，有rust等.. package.json 中有写
     use 'rafamadriz/friendly-snippets' -- A bunch of snippets to use
+
+    -- LSP
+    use "neovim/nvim-lspconfig" -- enable LSP
+    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
     -- 有些插件可以在Event触发时执行。
     -- 查看Event可以使用 `:help autocmd`
