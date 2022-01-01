@@ -8,9 +8,12 @@ configs.setup {
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   -- 如果安装python的treesitter，配置： ignore_install = { "python" }
   ignore_install = { "" }, -- List of parsers to ignore installing
+
+  -- autopairs的配置
   autopairs = {
     enable = true,
   },
+
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled
@@ -27,5 +30,11 @@ configs.setup {
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     -- colors = {}, -- table of hex strings
     -- termcolors = {} -- table of colour name strings
+  },
+
+  -- comments的配置
+  context_commentstring = {
+    enable = true,
+    enable_autocmd = false,
   }
 }

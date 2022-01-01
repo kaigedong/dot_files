@@ -49,6 +49,7 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
     use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+    use "numToStr/Comment.nvim" -- Easily comment stuff
 
     -- Lazy loading:
     -- Load on specific commands
@@ -120,6 +121,9 @@ return packer.startup(function(use)
     use "p00f/nvim-ts-rainbow"
     -- 对于开发treesitter插件有用：直接查看语法树
     -- use "nvim-treesitter/playground"
+
+    -- comment插件
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
 
     -- 有些插件可以在Event触发时执行。
     -- 查看Event可以使用 `:help autocmd`
