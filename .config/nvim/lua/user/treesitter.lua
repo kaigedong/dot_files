@@ -8,9 +8,9 @@ configs.setup {
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
   -- 如果安装python的treesitter，配置： ignore_install = { "python" }
   ignore_install = { "" }, -- List of parsers to ignore installing
-  -- autopairs = {
-  --  enable = true,
-  -- },
+  autopairs = {
+    enable = true,
+  },
   highlight = {
     enable = true, -- false will disable the whole extension
     disable = { "" }, -- list of language that will be disabled

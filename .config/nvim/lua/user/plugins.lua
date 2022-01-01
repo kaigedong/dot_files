@@ -48,6 +48,7 @@ return packer.startup(function(use)
     -- 大部分插件都依赖下面两个插件
     use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
     use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+    use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
     -- Lazy loading:
     -- Load on specific commands

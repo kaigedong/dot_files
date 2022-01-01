@@ -126,6 +126,11 @@ _G.packer_plugins = {
     path = "/home/bobo/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/bobo/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/bobo/.local/share/nvim/site/pack/packer/start/nvim-cmp",
