@@ -5,6 +5,7 @@ require "user.colorscheme"
 require "user.cmp"
 require "user.lsp"
 require "user.telescope"
+require "user.treesitter"
 
 -- 1. 插件安装目录:
 -- ~/.local/share/nvim/site
@@ -15,3 +16,4 @@ require "user.telescope"
 -- 5. g + l 可以显示LSP提示
 -- 6. <S-v> 可以选中当前行
 -- 7. 命令：`:e +Path` 可以像lvy一样导航目录，如 `:e ~/Documents/`
+-- 8. 开启/禁用treesitter: TSDisableAll heightlight / TSEnableAll heightlight

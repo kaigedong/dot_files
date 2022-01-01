@@ -110,6 +110,16 @@ return packer.startup(function(use)
     -- telescope 的插件，允许预览图片
     use 'nvim-telescope/telescope-media-files.nvim'
 
+    -- Treesitter
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    }
+    -- 依赖treesitter的彩虹括号
+    use "p00f/nvim-ts-rainbow"
+    -- 对于开发treesitter插件有用：直接查看语法树
+    -- use "nvim-treesitter/playground"
+
     -- 有些插件可以在Event触发时执行。
     -- 查看Event可以使用 `:help autocmd`
 
