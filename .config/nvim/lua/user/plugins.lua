@@ -73,8 +73,26 @@ return packer.startup(function(use)
     use {"mbbill/undotree"}
     -- 配合Telescope使用非常厉害
     use "junegunn/fzf.vim"
+    -- 相当于dashboard，只是显示历史打开的文件
+    use "mhinz/vim-startify"
+    -- 通过回车键选中一段文字，可以和surround配合使用。
+    -- gcmt/wildfire.vim
 
-    -- Lazy loading:
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        require("which-key").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
+
+    use "folke/which-key.nvim"
+
+
+  -- Lazy loading:
     -- Load on specific commands
     -- 同时该插件也会下载到opt文件夹，而非start文件夹
     -- 惰加载，在执行特定命令下触发
