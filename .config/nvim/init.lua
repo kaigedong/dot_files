@@ -9,6 +9,7 @@ require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
 require "user.lualine"
+require "user.nvimtree"
 
 -- 1. 插件安装目录:
 -- ~/.local/share/nvim/site

@@ -38,7 +38,9 @@ keymap("n", "<ESC>", ":noh<cr>", opts)
 -- <leader>e 执行命令： :Lex 30<cr>
 -- cr表示：carriage return，类似于回车
 -- Lexplore表示Left hand explorer
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+-- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+-- 使用nvim-tree，上面的方式光荣退休
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Resize with arrows
 -- 默认快捷键中，<C-w>W 将当前窗口放到左边，<C-w>L将当前窗口放到右边..
