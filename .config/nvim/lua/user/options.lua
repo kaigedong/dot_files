@@ -17,7 +17,6 @@ local options = {
     smartcase = true, -- smart case
     swapfile = false, -- creates a swapfile
     undofile = true, -- enable persistent undo
-    updatetime = 300, -- faster completion (4000ms default)
     writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
     signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
     guifont = "monospace:h17" -- the font used in graphical neovim applications
@@ -48,6 +47,8 @@ local options2 = {
     -- sidescrolloff = 8,
     completeopt = {"menuone", "noselect"}, -- mostly just for cmp
 
+    updatetime = 300, -- faster completion (4000ms default)
+
     number = true, -- set numbered lines
     numberwidth = 4, -- set number column width to 2 {default 4}
 
@@ -65,6 +66,24 @@ local options2 = {
 for k, v in pairs(options2) do
     vim.opt[k] = v
 end
+
+
+-- 代码折叠配置
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+-- 折叠等: 0: {; 1: {{; ...
+vim.o.foldlevelstart = 99
+
+function _G.custom_fold_text()
+    local line = vim.fn.getline(vim.v.foldstart)
+    local line_count = vim.v.foldend - vim.v.foldstart + 1
+    return " ⚡ " .. line .. "... " .. line_count .. " lines"
+end
+
+vim.opt.foldtext = 'v:lua.custom_fold_text()'
+vim.opt.fillchars = { eob = "-", fold = " " }
+vim.opt.viewoptions:remove("options")
+
 
 -- 有些设置，可能用lua不太好实现，就用了默认的vim的语法(我不想进行修改，这里就不进行设置了)
 -- vim.cmd "set whichwrap+=<,>,[,],h,l"
