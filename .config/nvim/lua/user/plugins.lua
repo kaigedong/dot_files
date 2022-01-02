@@ -56,6 +56,11 @@ return packer.startup(function(use)
     use "simrat39/rust-tools.nvim"
     -- 显示行尾空格
     use "ntpeters/vim-better-whitespace"
+    -- nvim 非常酷的状态栏目
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
     -- Lazy loading:
     -- Load on specific commands

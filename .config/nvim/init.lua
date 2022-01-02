@@ -8,6 +8,7 @@ require "user.telescope"
 require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
+require "user.lualine"
 
 -- 1. 插件安装目录:
 -- ~/.local/share/nvim/site
