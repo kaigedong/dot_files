@@ -53,6 +53,8 @@ return packer.startup(function(use)
     use "mg979/vim-visual-multi" -- 多光标插件
     use "tpope/vim-surround" -- surround 插件
 
+    -- use "simrat39/rust-tools.nvim"
+
     -- Lazy loading:
     -- Load on specific commands
     -- 同时该插件也会下载到opt文件夹，而非start文件夹

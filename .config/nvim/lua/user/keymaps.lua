@@ -57,6 +57,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Press jk fast to enter
 -- 在insert模式，jk映射为Esc
 keymap("i", "jk", "<ESC>", opts)
+-- insert模式，将Ctrl + f 映射到 Right按键。其他三个按键：`Left`, `Down`, `Up`
+keymap("i", "<C-f>", "<Right>", opts)
 
 -- Visual --
 -- Stay in indent mode
@@ -92,7 +94,8 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- dropdown 的形式打开Telescope，并禁用previewer
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
+-- 按键冲突： c-t是代码跳转
+-- keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>f", "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", opts)
 
