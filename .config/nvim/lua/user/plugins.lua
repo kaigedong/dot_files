@@ -54,6 +54,8 @@ return packer.startup(function(use)
     use "tpope/vim-surround" -- surround 插件
     -- 含有自定义的hint
     use "simrat39/rust-tools.nvim"
+    -- 显示行尾空格
+    use "ntpeters/vim-better-whitespace"
 
     -- Lazy loading:
     -- Load on specific commands
