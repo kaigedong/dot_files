@@ -4,10 +4,11 @@ if not status_ok then
 end
 
 -- lualine 的默认配置
+-- 查看 https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md 获得默认配置
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'lua',
+    theme = 'dracula',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
