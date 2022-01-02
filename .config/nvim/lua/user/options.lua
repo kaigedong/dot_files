@@ -8,7 +8,6 @@
 -- vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
 -- 3. 如果不用local，则是global的，使用local，只对当前文件有效
 local options = {
-    backup = false, -- creates a backup file
     conceallevel = 0, -- so that `` is visible in markdown files
     ignorecase = true, -- ignore case in search patterns
     pumheight = 10, -- pop up menu height
@@ -49,6 +48,8 @@ local options2 = {
 
     updatetime = 300, -- faster completion (4000ms default)
 
+    backup = false, -- creates a backup file
+
     number = true, -- set numbered lines
     numberwidth = 4, -- set number column width to 2 {default 4}
 
@@ -84,6 +85,9 @@ vim.opt.foldtext = 'v:lua.custom_fold_text()'
 vim.opt.fillchars = { eob = "-", fold = " " }
 vim.opt.viewoptions:remove("options")
 
+-- 为了持久化undotree, set undofile => vim.opt[undofile]=true
+vim.cmd "set undofile"
+vim.cmd "set undodir=~/.config/nvim/tmp/undo"
 
 -- 有些设置，可能用lua不太好实现，就用了默认的vim的语法(我不想进行修改，这里就不进行设置了)
 -- vim.cmd "set whichwrap+=<,>,[,],h,l"

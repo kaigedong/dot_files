@@ -4,7 +4,8 @@ export https_proxy=http://127.0.0.1:10809
 sudo pacman -S emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
     flameshot rofi go lsd bat i3-wm feh tig papirus-icon-theme
 
-paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono fnm watchexec jq screenkey polybar tokei xclip
+paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono fnm watchexec jq \
+  screenkey polybar tokei xclip fzf
 
 # 设置git
 git config --global user.name kaigedong

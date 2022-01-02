@@ -69,6 +69,10 @@ return packer.startup(function(use)
       },
       config = function() require'nvim-tree'.setup {} end
     }
+    -- undotree 可以通过命令触发：nnoremap <F5> :UndotreeToggle<CR>
+    use {"mbbill/undotree"}
+    -- 配合Telescope使用非常厉害
+    use "junegunn/fzf.vim"
 
     -- Lazy loading:
     -- Load on specific commands

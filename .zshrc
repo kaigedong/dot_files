@@ -68,6 +68,9 @@ export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PYENV_ROOT/bi
 plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting cargo z)
 source $ZSH/oh-my-zsh.sh
 
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 alias emacs="emacs -nw"
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -79,6 +82,7 @@ alias less="bat -p"
 alias baidunetdisk="/usr/lib/baidunetdisk/baidunetdisk"
 alias top="glances"
 alias open="xdg-open"
+alias cat="less"
 # alias tmux="TERM=xterm-256color tmux"
 
 # A tool to infer progress speed
