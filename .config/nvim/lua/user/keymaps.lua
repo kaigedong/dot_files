@@ -32,6 +32,8 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
+-- 在normal模式下，ESC map到清除高亮
+keymap("n", "<ESC>", ":noh<cr>", opts)
 
 -- <leader>e 执行命令： :Lex 30<cr>
 -- cr表示：carriage return，类似于回车
