@@ -15,4 +15,5 @@ require "user.whichkey"
 require "user.gitsigns"
 require "user.toggleterm"
 require "user.project"
+require "user.impatient"
 

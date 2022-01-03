@@ -139,6 +139,7 @@ return packer.startup(function(use)
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
     use "akinsho/toggleterm.nvim"
     use "ahmedkhalf/project.nvim"
+    use "lewis6991/impatient.nvim" --  Improve startup time for Neovim
 
     -- Telescope
     -- 执行命令: `:Telescope TAB`可以看到所有支持的命令
