@@ -74,7 +74,7 @@ return packer.startup(function(use)
 
     -- dashboard，只是显示历史打开的文件
     -- use "mhinz/vim-startify"
-    use "glepnir/dashboard-nvim"
+    -- use "glepnir/dashboard-nvim"
     -- use { "liuchengxu/vim-clap", run='cargo build --release && cp target/release/maple bin/' }
 
     -- 通过回车键选中一段文字，可以和surround配合使用。
@@ -140,6 +140,9 @@ return packer.startup(function(use)
     use "akinsho/toggleterm.nvim"
     use "ahmedkhalf/project.nvim"
     use "lewis6991/impatient.nvim" --  Improve startup time for Neovim
+    use "lukas-reineke/indent-blankline.nvim"
+    use 'goolord/alpha-nvim'
+    use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
     -- Telescope
     -- 执行命令: `:Telescope TAB`可以看到所有支持的命令
