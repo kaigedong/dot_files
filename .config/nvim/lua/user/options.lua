@@ -63,7 +63,7 @@ local options2 = {
     fillchars = { eob = "-", fold = " " },
 
     -- Whichkey 弹出时间。默认1000
-    timeoutlen = 500
+    timeoutlen = 100
 }
 
 for k, v in pairs(options2) do
