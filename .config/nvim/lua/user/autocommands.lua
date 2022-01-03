@@ -24,4 +24,11 @@ vim.cmd [[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
+  augroup LastCursorPos
+    autocmd!
+    autocmd BufReadPost * if @% !~# "\.git[\/\\]COMMIT_EDITMSG$" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+  augroup end
 ]]
+
+-- 光标记录参考： https://github.com/neovim/neovim/issues/14420#issuecomment-824668729
+

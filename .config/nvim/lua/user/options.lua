@@ -9,7 +9,6 @@
 -- 3. 如果不用local，则是global的，使用local，只对当前文件有效
 local options = {
     conceallevel = 0, -- so that `` is visible in markdown files
-    ignorecase = true, -- ignore case in search patterns
     pumheight = 10, -- pop up menu height
     showmode = false, -- we don't need to see things like -- INSERT -- anymore
     showtabline = 2, -- always show tabs
@@ -25,7 +24,8 @@ vim.opt.shortmess:append "c"
 
 local options2 = {
     cmdheight = 1, -- more space in the neovim command line for displaying messages
-    -- timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
+    ignorecase = true, -- ignore case in search patterns
+    timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
 
     splitbelow = true, -- force all horizontal splits to go below current window
     splitright = true, -- force all vertical splits to go to the right of current window
@@ -62,16 +62,13 @@ local options2 = {
     foldtext = 'v:lua.custom_fold_text()',
     fillchars = { eob = "-", fold = " " },
 
-    -- Whichkey 弹出时间。默认1000
-    timeoutlen = 100
 }
 
 for k, v in pairs(options2) do
     vim.opt[k] = v
 end
 
-
--- 配置代码折叠
+-- 配置代码折叠样式
 vim.opt.viewoptions:remove("options")
 function _G.custom_fold_text()
     local line = vim.fn.getline(vim.v.foldstart)
@@ -79,15 +76,6 @@ function _G.custom_fold_text()
     return " ⚡ " .. line .. "... " .. line_count .. " lines"
 end
 
--- vim-better-whitespace 设置
-vim.g.better_whitespace_enabled = 0 -- 不显示红色提示
-vim.g.strip_whitespace_on_save = 1  -- 保存时删除空格
-vim.g.strip_whitespace_confirm = 0  -- 不用询问是否确认删除
-vim.g.strip_whitelines_at_eof = 0   -- 删除文件末尾的空行
-
--- 设置vim Clap 默认 filter, `clap`, `fzf`, `telescope`
-vim.g.dashboard_default_executive ='fzf'
--- vim.g.clip.provider.filter = "maple"
 
 -- 为了持久化undotree, set undofile => vim.opt[undofile]=true
 -- TODO: 增加检测文件夹是否存在，不存在创建新文件夹的配置
@@ -99,13 +87,4 @@ vim.cmd "set undodir=~/.config/nvim/tmp/undo"
 -- vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- vim.cmd [[set iskeyword+=-]] -- 似乎是将 - 左右两侧的字母合起来当作一个word
 -- vim.cmd [[set formatoptions-=cro]]
-
--- 添加光标记录
--- 参考： https://github.com/neovim/neovim/issues/14420#issuecomment-824668729
-vim.cmd [[
-  augroup LastCursorPos
-    autocmd!
-    autocmd BufReadPost * if @% !~# "\.git[\/\\]COMMIT_EDITMSG$" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-  augroup end
-]]
 
