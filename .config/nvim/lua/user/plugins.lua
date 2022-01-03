@@ -73,11 +73,14 @@ return packer.startup(function(use)
     use {"mbbill/undotree"}
     -- 配合Telescope使用非常厉害
     use "junegunn/fzf.vim"
-    -- 相当于dashboard，只是显示历史打开的文件
-    use "mhinz/vim-startify"
+
+    -- dashboard，只是显示历史打开的文件
+    -- use "mhinz/vim-startify"
+    use "glepnir/dashboard-nvim"
+    -- use { "liuchengxu/vim-clap", run='cargo build --release && cp target/release/maple bin/' }
+
     -- 通过回车键选中一段文字，可以和surround配合使用。
     -- gcmt/wildfire.vim
-
     use {
       "folke/which-key.nvim",
       config = function()
@@ -89,10 +92,8 @@ return packer.startup(function(use)
       end
     }
 
-    use "folke/which-key.nvim"
 
-
-  -- Lazy loading:
+    -- Lazy loading:
     -- Load on specific commands
     -- 同时该插件也会下载到opt文件夹，而非start文件夹
     -- 惰加载，在执行特定命令下触发
@@ -134,6 +135,9 @@ return packer.startup(function(use)
         end
     }
 
+    -- git
+    use "lewis6991/gitsigns.nvim"
+
     -- nvim-cmp还需要安装snippets插件
     use 'L3MON4D3/LuaSnip' -- snippet engine
     -- 支持很多snippets，有rust等.. package.json 中有写
@@ -154,6 +158,9 @@ return packer.startup(function(use)
     use 'nvim-telescope/telescope-media-files.nvim'
     use "nvim-telescope/telescope-file-browser.nvim"
 
+    -- coc config
+    use {'neoclide/coc.nvim', branch = 'release'}
+
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
@@ -161,7 +168,7 @@ return packer.startup(function(use)
     }
     -- 依赖treesitter的彩虹括号
     use "p00f/nvim-ts-rainbow"
-    -- 对于开发treesitter插件有用：直接查看语法树
+    -- 开发treesitter插件有用：直接查看语法树
     -- use "nvim-treesitter/playground"
 
     -- comment插件

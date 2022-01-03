@@ -23,12 +23,6 @@ local options = {
 
 vim.opt.shortmess:append "c"
 
--- 用for loop 来设置变量
-for k, v in pairs(options) do
-    -- (我不想更改vim的默认设置，这里就不进行设置了。)
-    -- vim.opt[k] = v
-end
-
 local options2 = {
     cmdheight = 1, -- more space in the neovim command line for displaying messages
     -- timeoutlen = 1000, -- time to wait for a mapped sequence to complete (in milliseconds)
@@ -38,16 +32,13 @@ local options2 = {
     wrap = false, -- display lines as one long line
     fileencoding = "utf-8", -- the encoding written to a file
     clipboard = "unnamedplus", -- allows neovim to access the system clipboard
-    -- 似乎没什么用
     hlsearch = true, -- highlight all matches on previous search pattern
     mouse = "a", -- allow the mouse to be used in neovim
-    -- 好像没啥作用
     -- scrolloff = 8, -- is one of my fav
     -- sidescrolloff = 8,
     completeopt = {"menuone", "noselect"}, -- mostly just for cmp
 
     updatetime = 300, -- faster completion (4000ms default)
-
     backup = false, -- creates a backup file
 
     number = true, -- set numbered lines
@@ -62,42 +53,55 @@ local options2 = {
     expandtab = true, -- 根据tabstop 选项值把插入的 tab 替换成特定数目的空格
     softtabstop = 2, -- 选项修改按 Tab 键的宽度，不修改 tab 字符的显示宽度。具体行为跟 tabstop 选项值有关
     shiftwidth = 2, -- shift 4 spaces when tab(how many columns of whitespace a “level of indentation” is worth?)
-    smartindent = true -- make indenting smarter again autoindent 根据上一行判断缩进，smartindent根据语法缩进
+    smartindent = true, -- make indenting smarter again autoindent 根据上一行判断缩进，smartindent根据语法缩进
+
+    -- 代码折叠样式设置
+    foldmethod = 'expr',
+    foldexpr = 'nvim_treesitter#foldexpr()',
+    foldlevelstart = 99, -- 折叠等: 0: {; 1: {{; ...
+    foldtext = 'v:lua.custom_fold_text()',
+    fillchars = { eob = "-", fold = " " },
+
+    -- Whichkey 弹出时间。默认1000
+    timeoutlen = 500
 }
+
 for k, v in pairs(options2) do
     vim.opt[k] = v
 end
 
 
--- 代码折叠配置
-vim.o.foldmethod = 'expr'
-vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
--- 折叠等: 0: {; 1: {{; ...
-vim.o.foldlevelstart = 99
-
+-- 配置代码折叠
+vim.opt.viewoptions:remove("options")
 function _G.custom_fold_text()
     local line = vim.fn.getline(vim.v.foldstart)
     local line_count = vim.v.foldend - vim.v.foldstart + 1
     return " ⚡ " .. line .. "... " .. line_count .. " lines"
 end
 
-vim.opt.foldtext = 'v:lua.custom_fold_text()'
-vim.opt.fillchars = { eob = "-", fold = " " }
-vim.opt.viewoptions:remove("options")
+-- vim-better-whitespace 设置
+vim.g.better_whitespace_enabled = 0 -- 不显示红色提示
+vim.g.strip_whitespace_on_save = 1  -- 保存时删除空格
+vim.g.strip_whitespace_confirm = 0  -- 不用询问是否确认删除
+vim.g.strip_whitelines_at_eof = 0   -- 删除文件末尾的空行
+
+-- 设置vim Clap 默认 filter, `clap`, `fzf`, `telescope`
+vim.g.dashboard_default_executive ='fzf'
+-- vim.g.clip.provider.filter = "maple"
 
 -- 为了持久化undotree, set undofile => vim.opt[undofile]=true
+-- TODO: 增加检测文件夹是否存在，不存在创建新文件夹的配置
 vim.cmd "set undofile"
 vim.cmd "set undodir=~/.config/nvim/tmp/undo"
 
--- 有些设置，可能用lua不太好实现，就用了默认的vim的语法(我不想进行修改，这里就不进行设置了)
+
+-- 有些设置，用lua不太好实现，可用默认的vim的语法
 -- vim.cmd "set whichwrap+=<,>,[,],h,l"
 -- vim.cmd [[set iskeyword+=-]] -- 似乎是将 - 左右两侧的字母合起来当作一个word
--- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+-- vim.cmd [[set formatoptions-=cro]]
 
--- autocmd，来执行"记录上次文件打开位置"的作用
--- autocmd BufReadPost * \ if line("'"") >= 1 && line("'"") <= line("$") && &ft !~# 'commit' \ | exe "normal! g`"" \ | endif
+-- 添加光标记录
 -- 参考： https://github.com/neovim/neovim/issues/14420#issuecomment-824668729
--- 注意，添加autocmd时，这个augroup后面的名字，不与其他命令重合，不然似乎不生效
 vim.cmd [[
   augroup LastCursorPos
     autocmd!

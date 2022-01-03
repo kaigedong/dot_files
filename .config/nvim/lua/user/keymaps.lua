@@ -88,7 +88,7 @@ keymap("v", "p", '"_dP', opts)
 -- keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
--- Better terminal navigation
+-- 窗口导航
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
@@ -100,6 +100,6 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_ivy({ }))<cr>", opts)
 
 -- 按键冲突： c-t是代码跳转
--- keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+-- 使用telescope 的 file_browser插件
 keymap("n", "<leader>f", "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", opts)
 

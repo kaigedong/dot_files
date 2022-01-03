@@ -3,14 +3,13 @@ if not status_ok then
   return
 end
 
--- 加载media_files插件
-telescope.load_extension('media_files')
-telescope.load_extension("file_browser")
-
 local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
+
+    -- TODO: 设置theme
+
 
     prompt_prefix = " ",
     selection_caret = " ",
@@ -82,6 +81,9 @@ telescope.setup {
     },
   },
   pickers = {
+    file_browser = {
+      theme = "ivy"
+    }
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -97,6 +99,7 @@ telescope.setup {
         filetypes = {"png", "webp", "jpg", "jpeg"},
         find_cmd = "rg" -- find command (defaults to `fd`)
     },
+
     file_browser = {
       theme = "ivy",
       mappings = {
@@ -115,3 +118,8 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+
+-- 加载media_files插件，需要放在后面，设置才能生效
+telescope.load_extension('media_files')
+telescope.load_extension("file_browser")
+
