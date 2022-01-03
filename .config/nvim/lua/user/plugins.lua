@@ -135,8 +135,9 @@ return packer.startup(function(use)
     -- LSP
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-
+    use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
     use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+
     use "akinsho/toggleterm.nvim"
     use "ahmedkhalf/project.nvim"
     use "lewis6991/impatient.nvim" --  Improve startup time for Neovim
@@ -145,26 +146,16 @@ return packer.startup(function(use)
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
 
     -- Telescope
-    -- 执行命令: `:Telescope TAB`可以看到所有支持的命令
-    -- :Telescope find_files
-    -- :Telescope live_grep (查找文件内容)
-    -- :Telescope lsp_<TAB> 显示lsp相关的内容，如lsp_definition; lsp_reference
-    -- :Telescope find_files theme=ivy 可选theme:ivy, dropdown, cursor
     use "nvim-telescope/telescope.nvim"
-    -- telescope 的插件，允许预览图片
     use "nvim-telescope/telescope-media-files.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
-
-    -- coc config
-    use {"neoclide/coc.nvim", branch = 'release'}
 
     -- Treesitter
     use {
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
-    -- 依赖treesitter的彩虹括号
-    use "p00f/nvim-ts-rainbow"
+    use "p00f/nvim-ts-rainbow" -- 依赖treesitter的彩虹括号
     -- 开发treesitter插件有用：直接查看语法树
     -- use "nvim-treesitter/playground"
 

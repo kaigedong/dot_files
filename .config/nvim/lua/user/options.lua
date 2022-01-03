@@ -1,19 +1,10 @@
 -- :help options
---
--- 1. 可以用这种方式： o = vim.opt
--- o.backup = false
--- 2. 用for loop来设置变量，避免下面三行的写法
--- vim.opt.backup = false                          -- creates a backup file
--- vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
--- vim.opt.cmdheight = 2                           -- more space in the neovim command line for displaying messages
--- 3. 如果不用local，则是global的，使用local，只对当前文件有效
 local options = {
     conceallevel = 0, -- so that `` is visible in markdown files
     pumheight = 10, -- pop up menu height
     showmode = false, -- we don't need to see things like -- INSERT -- anymore
     showtabline = 2, -- always show tabs
     smartcase = true, -- smart case
-    swapfile = false, -- creates a swapfile
     undofile = true, -- enable persistent undo
     writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
     signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
@@ -26,6 +17,8 @@ local options2 = {
     cmdheight = 1, -- more space in the neovim command line for displaying messages
     ignorecase = true, -- ignore case in search patterns
     timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
+
+    swapfile = false, -- creates a swapfile
 
     splitbelow = true, -- force all horizontal splits to go below current window
     splitright = true, -- force all vertical splits to go to the right of current window
@@ -75,16 +68,4 @@ function _G.custom_fold_text()
     local line_count = vim.v.foldend - vim.v.foldstart + 1
     return " ⚡ " .. line .. "... " .. line_count .. " lines"
 end
-
-
--- 为了持久化undotree, set undofile => vim.opt[undofile]=true
--- TODO: 增加检测文件夹是否存在，不存在创建新文件夹的配置
-vim.cmd "set undofile"
-vim.cmd "set undodir=~/.config/nvim/tmp/undo"
-
-
--- 有些设置，用lua不太好实现，可用默认的vim的语法
--- vim.cmd "set whichwrap+=<,>,[,],h,l"
--- vim.cmd [[set iskeyword+=-]] -- 似乎是将 - 左右两侧的字母合起来当作一个word
--- vim.cmd [[set formatoptions-=cro]]
 
