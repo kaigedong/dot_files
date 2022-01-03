@@ -3,10 +3,6 @@ local opts = {
     silent = true
 }
 
-local term_opts = {
-    silent = true
-}
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -86,13 +82,6 @@ keymap("v", "p", '"_dP', opts)
 -- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 -- keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 -- keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Terminal --
--- 窗口导航
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 -- dropdown 的形式打开Telescope，并禁用previewer
