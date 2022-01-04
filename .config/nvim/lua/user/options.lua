@@ -16,7 +16,7 @@ vim.opt.shortmess:append "c"
 local options2 = {
     cmdheight = 1, -- more space in the neovim command line for displaying messages
     ignorecase = true, -- ignore case in search patterns
-    timeoutlen = 100, -- time to wait for a mapped sequence to complete (in milliseconds)
+    timeoutlen = 400, -- time to wait for a mapped sequence to complete (in milliseconds)
 
     swapfile = false, -- creates a swapfile
 
@@ -54,7 +54,6 @@ local options2 = {
     foldlevelstart = 99, -- 折叠等: 0: {; 1: {{; ...
     foldtext = 'v:lua.custom_fold_text()',
     fillchars = { eob = "-", fold = " " },
-
 }
 
 for k, v in pairs(options2) do
