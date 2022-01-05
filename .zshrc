@@ -2,7 +2,7 @@
 session="workspace"
 tmux has-session -t $session 2>/dev/null
 if [ $? != 0 ]; then
-   # 对终端中nvim色彩显示很重要 
+   # 对终端中nvim色彩显示很重要
    TERM=xterm-256color tmux new-session -s $session 2>/dev/null
 else
   tmux attach -t $session 2>/dev/null
@@ -65,7 +65,7 @@ export CGO_ENABLED=0
 export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PYENV_ROOT/bin:$GOPATH/bin:$HOME/bin:$PATH"
 
 # Standard plugins can be found in $ZSH/plugins/
-plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting cargo z)
+plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting rust z)
 source $ZSH/oh-my-zsh.sh
 
 source /usr/share/fzf/key-bindings.zsh
