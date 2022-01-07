@@ -21,3 +21,10 @@ require "user.whichkey"
 require "user.autocommands"
 require "user.better-whitespace"
 require "user.undotree"
+require "user.rust-tools"
+
+local vimim_status_ok, vimim = pcall(require, "vimim")
+if not vimim_status_ok then
+    return
+end
+

@@ -81,7 +81,6 @@ return packer.startup(function(use)
     -- gcmt/wildfire.vim
     use "folke/which-key.nvim"
 
-
     -- Lazy loading:
     -- Load on specific commands
     -- 同时该插件也会下载到opt文件夹，而非start文件夹
@@ -99,7 +98,8 @@ return packer.startup(function(use)
 
     -- 内置了大概6个主题，其中darkplus还不错
     -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-    use "folke/tokyonight.nvim"
+    -- use "folke/tokyonight.nvim"
+    use "shaunsingh/nord.nvim"
 
     -- use 'neovim/nvim-lspconfig'
     -- use 'hrsh7th/cmp-nvim-lsp'

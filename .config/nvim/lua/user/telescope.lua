@@ -10,7 +10,6 @@ telescope.setup {
 
     -- TODO: 设置theme
 
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },

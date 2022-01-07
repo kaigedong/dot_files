@@ -10,9 +10,11 @@
 
  5. vim.opt 相当于 `:set`
 
- 6. vim.notify如果被其他消息覆盖，可以执行`:messages`命令，来查看
+ 6. `let g:nvim_tree_refresh_wait = 500 == vim.g.nvim_tree_refresh_wait = 500 == vim.g["neovide_cursor_vfx_mode"] = "torpedo"`
 
- 7. 要安装`xclip`才能复制到系统剪贴板
+ 7. vim.notify如果被其他消息覆盖，可以执行`:messages`命令，来查看
+
+ 8. 要安装`xclip`才能复制到系统剪贴板
 
 ## 插件
 
@@ -27,6 +29,16 @@
  1. g + l 可以显示LSP提示信息
 
  2. <S-v> 可以选中当前行
+
+ 3. In nvim-tree:
+
+  + `a` to add a file. Adding a leading / at the end of the path to add a directory.
+
+  + `r` to rename a file
+
+  + `R` will refresh the tree
+
+  + <BS> will close current opened directory or parent
 
 ## 主题
 

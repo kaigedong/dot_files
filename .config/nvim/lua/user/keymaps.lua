@@ -91,4 +91,3 @@ keymap("v", "p", '"_dP', opts)
 -- 按键冲突： c-t是代码跳转
 -- 使用telescope 的 file_browser插件
 keymap("n", "<leader>f", "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", opts)
-

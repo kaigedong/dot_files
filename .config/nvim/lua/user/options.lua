@@ -60,6 +60,11 @@ for k, v in pairs(options2) do
     vim.opt[k] = v
 end
 
+
+-- 设置neovide光标移动气泡特效
+vim.g["neovide_cursor_vfx_mode"] = "torpedo"
+
+
 -- 配置代码折叠样式
 vim.opt.viewoptions:remove("options")
 function _G.custom_fold_text()
