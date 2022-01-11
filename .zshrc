@@ -105,6 +105,9 @@ export ANDROID_TOOLS="/home/bobo/Android/Sdk/tools"
 export ANDROID_PLATFORM_TOOLS="/home/bobo/Android/Sdk/platform-tools"
 export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 
+# 对编译polkawallet至关重要
+export JPUSH_APPKEY=""
+
 export PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
 
 export GPG_TTY=$(tty)
