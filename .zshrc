@@ -105,7 +105,7 @@ export ANDROID_TOOLS="/home/bobo/Android/Sdk/tools"
 export ANDROID_PLATFORM_TOOLS="/home/bobo/Android/Sdk/platform-tools"
 export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
 
-PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
+export PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
 
 export GPG_TTY=$(tty)
 export NEOVIDE_MULTIGRID
