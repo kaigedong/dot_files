@@ -98,6 +98,7 @@ typeset -U PATH
 # xdg-mime query default inode/directory # 查看默认的文件管理器
 
 eval "$(fnm env)"
+
 # for Flutter
 export NO_PROXY=localhost,127.0.0.1
 export ANDROID_HOME="/home/bobo/Android/Sdk"
