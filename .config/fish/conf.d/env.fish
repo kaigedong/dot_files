@@ -42,7 +42,7 @@ export NEOVIDE_MULTIGRID
 
 # Rust
 rustc --print sysroot | read r_sysroot
-export RUST_SRC_PATH="{$r_sysroot}/lib/rustlib/src/rust/library"
+export RUST_SRC_PATH="$r_sysroot/lib/rustlib/src/rust/library"
 export WASM_BUILD_TYPE=release # For substrate
 
 # NPM
