@@ -1,6 +1,6 @@
-abbr -a ls "lsd --date '+%Y-%m-%d %H:%M:%S'"
-abbr -a la "lsd -lth --date '+%Y-%m-%d %H:%M:%S'"
-abbr -a lb "lsd -lh --date '+%Y-%m-%d %H:%M:%S'"
+abbr -a ls "lsd"
+abbr -a la "lsd -lth"
+abbr -a lb "lsd -lh"
 abbr -a grep rg
 abbr -a less "bat -p"
 abbr -a top glances

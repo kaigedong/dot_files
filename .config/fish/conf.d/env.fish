@@ -57,3 +57,4 @@ fish_add_path $HOME/bin
 fish_add_path $HOME/.emacs.d/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $GOPATH/bin
+fish_add_path $HOME/.local/share/nvim/lsp_servers/zk/ $HOME/.local/share/nvim/lsp_servers/rust
