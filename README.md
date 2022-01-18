@@ -79,3 +79,12 @@ dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-10 "['<Shift><Su
 ```bash
 git config --global commit.gpgsign true
 ```
+
+## zsh_history to fish_history
+
+```bash
+gcc -c zsh_history_to_utf8.c && gcc zsh_history_to_utf8.o -o zsh_history_to_utf8
+cat ~/.zsh_history | ./zsh_history_to_utf8 > zsh_history
+python zsh_history_to_fish.py
+cat fish_history >> ~/.local/share/fish/fish_history
+```

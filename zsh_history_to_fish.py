@@ -11,8 +11,8 @@ def is_valid_fish(cmd):
             return False
     return True
 
-with open(os.path.expanduser('~/.local/share/fish/fish_history'), 'a') as o:
-    with open(os.path.expanduser('~/.zsh_history')) as f:
+with open(os.path.expanduser('./fish_history'), 'a') as o:
+    with open(os.path.expanduser('./zsh_history')) as f:
         for line in f:
             line = line.strip()
             if line and re.match('^:\s+\d+:\d;', line):
