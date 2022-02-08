@@ -54,6 +54,7 @@ fnm default 14
 
 # emacs 需要安装依赖以format json等
 npm install --global prettier @prettier/plugin-php prettier-plugin-solidity prettier-plugin-toml yarn
+npm i -g alacritty-themes
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
