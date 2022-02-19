@@ -13,7 +13,7 @@ git config --global user.email dongkaige@gmail.com
 git config --global commit.gpgsign true
 
 # 安装oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # zsh pure theme (powerlevel10k 也不错)
 mkdir -p "$HOME/.zsh"
@@ -47,10 +47,13 @@ SDL_IM_MODULE DEFAULT=fcitx" >>~/.pam_environment
 
 cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
 
-# fnm
-eval "$(fnm env)"
-fnm install 14
-fnm default 14
+# nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$HOME/.nvm"                                                                          
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+nvm install 14
 
 # emacs 需要安装依赖以format json等
 npm install --global prettier @prettier/plugin-php prettier-plugin-solidity prettier-plugin-toml yarn
