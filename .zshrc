@@ -2,16 +2,17 @@
 session="workspace"
 tmux has-session -t $session 2>/dev/null
 if [ $? != 0 ]; then
-   # 对终端中nvim色彩显示很重要
    TERM=xterm-256color tmux new-session -s $session 2>/dev/null
 else
    TERM=xterm-256color ttmux attach -t $session 2>/dev/null
 fi
 
+# Pure theme
 fpath+=$HOME/.zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
+# Zsh history setting
 setopt HIST_SAVE_NO_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
@@ -19,57 +20,52 @@ HIST_STAMPS="yyyy-mm-dd"
 HISTSIZE=10000000
 SAVEHIST=10000000
 
-export ZSH="/home/bobo/.oh-my-zsh"
-export PYENV_ROOT="$HOME/.pyenv"
-export PET_GITHUB_ACCESS_TOKEN="1ad4eebf13422ffe4c0f132d6d2aeca5ef77ce25"
-
 export LANGUAGE=en_US
 export LANG=en_US.UTF-8
-
-# ~/.config/kioslaverc stores KDE proxy config
-# export http_proxy="http://192.168.1.183:5678"
-export http_proxy="http://127.0.0.1:10809"
-export https_proxy=$http_proxy
-export HTTP_PROXY=$http_proxy
-export HTTPS_PROXY=$http_proxy
-
-#rustlang
+export ZSH="/home/bobo/.oh-my-zsh"
+export PET_GITHUB_ACCESS_TOKEN="1ad4eebf13422ffe4c0f132d6d2aeca5ef77ce25"
+##### Rust #####
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/library"
-export WASM_BUILD_TYPE=release # For substrate
+export WASM_BUILD_TYPE=release
 # export OPENSSL_LIB_DIR="/usr/lib/openssl-1.0"
 # export OPENSSL_INCLUDE_DIR="/usr/include/openssl-1.0"
-
-# color man use bat
+##### color man use bat #####
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
-# npm install -g yarn
+##### GOlang #####
+export GOPATH="$HOME/go"
+# export GO111MODULE=on
+# export GOPROXY=https://mirrors.aliyun.com/goproxy/
+# CGO_ENABLED=1 leads to faster, smaller builds & runtimes
+# it can dynamically load the host OS's native libraries (glibc etc.)
+# export CGO_ENABLED=0
+##### Node #####
 # alias npm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
-export npm_config_proxy=http://127.0.0.1:10809
+# export npm_config_proxy=http://127.0.0.1:10809
 # npm config set registry https://registry.npm.taobao.org
 # npm install -g something --verbose # 显示下载细节
 # yarn config set httpProxy http://127.0.0.1:10809
 # yarn config set httpsProxy http://127.0.0.1:10809
+##### for Flutter #####
+export NO_PROXY=localhost,127.0.0.1
+export ANDROID_HOME="/home/bobo/Android/Sdk"
+export ANDROID_TOOLS="/home/bobo/Android/Sdk/tools"
+export ANDROID_PLATFORM_TOOLS="/home/bobo/Android/Sdk/platform-tools"
+export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
+# 对编译polkawallet至关重要
+export JPUSH_APPKEY=""
+##### Git #####
+export GPG_TTY=$(tty)
+##### PATH #####
+export PATH=$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH
+export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/bin:$PATH"
 
-#GOlang
-export GOPATH="$HOME/go"
-export GO111MODULE=on
-# export GOPROXY=https://mirrors.aliyun.com/goproxy/
-# CGO_ENABLED=1 leads to faster, smaller builds & runtimes
-# it can dynamically load the host OS's native libraries (glibc etc.)
-export CGO_ENABLED=0
+# ~/.config/kioslaverc stores KDE proxy config
+export SHELLPROXY_URL="http://127.0.0.1:10809"
+ZSH_PYENV_QUIET=true
 
-export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$HOME/.cargo/bin:$PYENV_ROOT/bin:$GOPATH/bin:$HOME/bin:$PATH"
-
-# Standard plugins can be found in $ZSH/plugins/
-plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting rust z)
+plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting
+         rust z nvm pyenv fzf shell-proxy)
 source $ZSH/oh-my-zsh.sh
-
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
 
 alias emacs="emacs -nw"
 alias zshconfig="mate ~/.zshrc"
@@ -83,35 +79,13 @@ alias baidunetdisk="/usr/lib/baidunetdisk/baidunetdisk"
 alias top="glances"
 alias open="xdg-open"
 alias cat="less"
-# alias tmux="TERM=xterm-256color tmux"
 
-# A tool to infer progress speed
-# sudo nethogs
-
-eval "$(pyenv init --path)"
-# ibus engine libpinyin
 typeset -U PATH
-# macchina # better screenfetch written in rust
-# screenfetch -A 'Arch Linux' # | lolcat
+proxy enable
+# screenfetch -A 'Arch Linux' | lolcat
 
+# sudo nethogs # A tool to infer progress speed
+# macchina # better screenfetch written in rust
+# ibus engine libpinyin
 # alsamixer # 命令行调节声音大小
 # xdg-mime query default inode/directory # 查看默认的文件管理器
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# for Flutter
-export NO_PROXY=localhost,127.0.0.1
-export ANDROID_HOME="/home/bobo/Android/Sdk"
-export ANDROID_TOOLS="/home/bobo/Android/Sdk/tools"
-export ANDROID_PLATFORM_TOOLS="/home/bobo/Android/Sdk/platform-tools"
-export JAVA_HOME=$(readlink -f /usr/bin/javac | sed "s:/bin/javac::")
-
-# 对编译polkawallet至关重要
-export JPUSH_APPKEY=""
-
-export PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS
-
-export GPG_TTY=$(tty)
-export NEOVIDE_MULTIGRID

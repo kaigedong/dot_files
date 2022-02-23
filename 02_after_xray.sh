@@ -2,10 +2,10 @@ export http_proxy=http://127.0.0.1:10809
 export https_proxy=http://127.0.0.1:10809
 
 sudo pacman -S emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
-    flameshot rofi go lsd bat i3-wm feh tig papirus-icon-theme yay
+    flameshot rofi go lsd bat i3-wm feh tig papirus-icon-theme paru
 
-yay -S visual-studio-code-bin nerd-fonts-noto-sans-mono watchexec jq \
-  screenkey polybar tokei xclip fzf stylua-bin nutstore-experimental
+paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono watchexec jq \
+  screenkey polybar tokei xclip fzf stylua-bin nutstore-experimental screenfetch
 
 # 设置git
 git config --global user.name kaigedong
@@ -27,7 +27,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 source ~/.cargo/env
 cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.1 --locked
-cargo install tealdeer ripgrep fd-find
+cargo install tealdeer ripgrep fd-find lolcat
 tldr --update
 
 # 配置emacs
