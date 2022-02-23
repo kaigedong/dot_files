@@ -5,7 +5,7 @@ if [ $? != 0 ]; then
    # 对终端中nvim色彩显示很重要
    TERM=xterm-256color tmux new-session -s $session 2>/dev/null
 else
-  tmux attach -t $session 2>/dev/null
+   TERM=xterm-256color ttmux attach -t $session 2>/dev/null
 fi
 
 fpath+=$HOME/.zsh/pure
@@ -97,7 +97,9 @@ typeset -U PATH
 # alsamixer # 命令行调节声音大小
 # xdg-mime query default inode/directory # 查看默认的文件管理器
 
-eval "$(fnm env)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # for Flutter
 export NO_PROXY=localhost,127.0.0.1
