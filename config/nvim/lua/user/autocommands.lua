@@ -1,4 +1,4 @@
-vim.cmd [[
+vim.cmd([[
   augroup _general_settings
     autocmd!
     autocmd FileType qf,help,man,lspinfo nnoremap <silent> <buffer> q :close<CR>
@@ -28,7 +28,6 @@ vim.cmd [[
     autocmd!
     autocmd BufReadPost * if @% !~# "\.git[\/\\]COMMIT_EDITMSG$" && line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
   augroup end
-]]
+]])
 
 -- 光标记录参考： https://github.com/neovim/neovim/issues/14420#issuecomment-824668729
-
