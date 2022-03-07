@@ -1,10 +1,12 @@
 # tmux
+alias tmux="TERM=xterm-256color tmux"
+
 session="workspace"
 tmux has-session -t $session 2>/dev/null
 if [ $? != 0 ]; then
-   TERM=xterm-256color tmux new-session -s $session 2>/dev/null
+   tmux new-session -s $session 2>/dev/null
 else
-   TERM=xterm-256color ttmux attach -t $session 2>/dev/null
+   tmux attach -t $session 2>/dev/null
 fi
 
 # Pure theme
@@ -46,7 +48,7 @@ export GOPATH="$HOME/go"
 # yarn config set httpProxy http://127.0.0.1:10809
 # yarn config set httpsProxy http://127.0.0.1:10809
 ##### for Flutter #####
-export NO_PROXY=localhost,127.0.0.1
+export NO_PROXY=localhost,127.0.0.1,::1
 export ANDROID_HOME="/home/bobo/Android/Sdk"
 export ANDROID_TOOLS="/home/bobo/Android/Sdk/tools"
 export ANDROID_PLATFORM_TOOLS="/home/bobo/Android/Sdk/platform-tools"
@@ -60,12 +62,17 @@ export PATH=$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH
 export PATH="$HOME/.emacs.d/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/bin:$PATH"
 
 # ~/.config/kioslaverc stores KDE proxy config
-export SHELLPROXY_URL="http://127.0.0.1:10809"
 ZSH_PYENV_QUIET=true
 
+eval "$(fnm env --use-on-cd)"
+
 plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting
-         rust z nvm pyenv fzf shell-proxy)
+         z pyenv fzf zsh-proxy)
 source $ZSH/oh-my-zsh.sh
+
+# NOTE:
+#
+# zsh-proxy: init_proxy; config_proxy; proxy; noproxy; myip
 
 alias emacs="emacs -nw"
 alias zshconfig="mate ~/.zshrc"
@@ -81,7 +88,6 @@ alias open="xdg-open"
 alias cat="less"
 
 typeset -U PATH
-proxy enable
 # screenfetch -A 'Arch Linux' | lolcat
 
 # sudo nethogs # A tool to infer progress speed
@@ -89,3 +95,17 @@ proxy enable
 # ibus engine libpinyin
 # alsamixer # 命令行调节声音大小
 # xdg-mime query default inode/directory # 查看默认的文件管理器
+
+awk 'BEGIN{
+    s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
+    for (colnum = 0; colnum<77; colnum++) {
+        r = 255-(colnum*255/76);
+        g = (colnum*510/76);
+        b = (colnum*255/76);
+        if (g>255) g = 510-g;
+        printf "\033[48;2;%d;%d;%dm", r,g,b;
+        printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
+        printf "%s\033[0m", substr(s,colnum+1,1);
+    }
+    printf "\n";
+}'
