@@ -30,6 +30,9 @@ cargo install --force subkey --git https://github.com/paritytech/substrate --ver
 cargo install tealdeer ripgrep fd-find lolcat coreutils fnm
 tldr --update
 
+# under bash: init fnm
+eval "$(fnm env --use-on-cd)" && fnm install 14
+
 # nvm
 #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 #export NVM_DIR="$HOME/.nvm"
