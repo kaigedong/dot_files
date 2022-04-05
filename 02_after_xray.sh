@@ -27,16 +27,16 @@ git clone https://github.com/sukkaw/zsh-proxy.git ~/.oh-my-zsh/custom/plugins/zs
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 source ~/.cargo/env
 cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.1 --locked
-cargo install tealdeer ripgrep fd-find lolcat coreutils
+cargo install tealdeer ripgrep fd-find lolcat coreutils fnm
 tldr --update
 
 # nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-nvm install 14
+#nvm install 14
 
 # emacs
 git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs.d
