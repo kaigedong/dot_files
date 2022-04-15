@@ -31,7 +31,7 @@ cargo install tealdeer ripgrep fd-find lolcat coreutils fnm
 tldr --update
 
 # under bash: init fnm
-eval "$(fnm env --use-on-cd)" && fnm install 14
+eval "$(fnm env --use-on-cd)" && fnm install 14 && fnm default 14
 
 # nvm
 #curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
