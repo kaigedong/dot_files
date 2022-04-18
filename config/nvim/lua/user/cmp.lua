@@ -52,6 +52,11 @@ cmp.setup({
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
+	window = {
+		documentation = {
+			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+		},
+	},
 	mapping = {
 		-- 允许 Ctrl + j / k 在snippet上下移动
 		["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -123,20 +128,29 @@ cmp.setup({
 	-- snippet的来源，决定补全的提示顺序
 	-- https://github.com/topics/nvim-cmp可以找到更多sources
 	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "nvim_lua" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" },
-		{ name = "crates" },
+		{
+			name = "nvim_lsp",
+		},
+		{
+			name = "nvim_lua",
+		},
+		{
+			name = "luasnip",
+		},
+		{
+			name = "buffer",
+		},
+		{
+			name = "path",
+		},
+		{
+			name = "crates",
+		},
 	},
 
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
-	},
-	documentation = {
-		border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 	},
 	experimental = {
 		-- 类似zsh 的自动提示

@@ -168,9 +168,7 @@ return packer.startup(function(use)
 	-- Git history
 	use({
 		"lewis6991/gitsigns.nvim",
-		requires = {
-			"nvim-lua/plenary.nvim",
-		},
+		requires = { "nvim-lua/plenary.nvim" },
 	})
 
 	-- 有些插件可以在Event触发时执行。

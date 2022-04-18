@@ -4,7 +4,9 @@ if not status_ok then
 end
 
 configs.setup({
-	ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+	-- A list of parser names, or "all"
+	-- ensure_installed = { "c", "lua", "rust" },
+	ensure_installed = "all",
 	sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
 	-- 如果安装python的treesitter，配置： ignore_install = { "python" }
 	ignore_install = { "" }, -- List of parsers to ignore installing
@@ -20,7 +22,10 @@ configs.setup({
 		additional_vim_regex_highlighting = true,
 	},
 	-- 比如按o时，自动在前面空合适的空格，可能yaml支持不是很好，因此被禁用了
-	indent = { enable = true, disable = { "yaml" } },
+	indent = {
+		enable = true,
+		disable = { "yaml" },
+	},
 
 	-- rainbow 的配置
 	rainbow = {
