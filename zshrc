@@ -4,14 +4,15 @@ alias tmux="TERM=xterm-256color tmux"
 session="workspace"
 tmux has-session -t $session 2>/dev/null
 if [ $? != 0 ]; then
-   tmux new-session -s $session 2>/dev/null
+    tmux new-session -s $session 2>/dev/null
 else
-   tmux attach -t $session 2>/dev/null
+    tmux attach -t $session 2>/dev/null
 fi
 
 # Pure theme
 fpath+=$HOME/.zsh/pure
-autoload -U promptinit; promptinit
+autoload -U promptinit
+promptinit
 prompt pure
 
 # Zsh history setting
@@ -21,6 +22,9 @@ setopt HIST_IGNORE_ALL_DUPS
 HIST_STAMPS="yyyy-mm-dd"
 HISTSIZE=10000000
 SAVEHIST=10000000
+
+# disable zsh run time statistic
+REPORTTIME=-1
 
 export LANGUAGE=en_US
 export LANG=en_US.UTF-8
@@ -67,7 +71,7 @@ ZSH_PYENV_QUIET=true
 eval "$(fnm env --use-on-cd)"
 
 plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting
-         z pyenv fzf zsh-proxy)
+    z pyenv fzf zsh-proxy)
 source $ZSH/oh-my-zsh.sh
 
 # NOTE:
