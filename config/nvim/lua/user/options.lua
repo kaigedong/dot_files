@@ -45,7 +45,7 @@ local options2 = {
 	tabstop = 2, -- Tab 默认显示宽度是 8 个空格,修改Tab显示宽度：1 tab == 4 spaces，不修改按Tab键的行为
 	expandtab = true, -- 根据tabstop 选项值把插入的 tab 替换成特定数目的空格
 	softtabstop = 2, -- 选项修改按 Tab 键的宽度，不修改 tab 字符的显示宽度。具体行为跟 tabstop 选项值有关
-	shiftwidth = 2, -- shift 4 spaces when tab(how many columns of whitespace a “level of indentation” is worth?)
+	shiftwidth = 4, -- shift 4 spaces when tab(how many columns of whitespace a “level of indentation” is worth?)
 	smartindent = true, -- make indenting smarter again autoindent 根据上一行判断缩进，smartindent根据语法缩进
 
 	-- 代码折叠样式设置
