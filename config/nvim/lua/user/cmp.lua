@@ -52,11 +52,6 @@ cmp.setup({
 			luasnip.lsp_expand(args.body) -- For `luasnip` users.
 		end,
 	},
-	window = {
-		documentation = {
-			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-		},
-	},
 	mapping = {
 		-- 允许 Ctrl + j / k 在snippet上下移动
 		["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -152,6 +147,15 @@ cmp.setup({
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,
 	},
+
+	window = {
+		completion = cmp.config.window.bordered(),
+		documentation = cmp.config.window.bordered(),
+		-- documentation = {
+		--     border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
+		-- },
+	},
+
 	experimental = {
 		-- 类似zsh 的自动提示
 		ghost_text = true,

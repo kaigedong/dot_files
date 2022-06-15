@@ -65,7 +65,15 @@ return packer.startup(function(use)
 
 	-- For file icon, lualine/nvim-tree need this
 	use("kyazdani42/nvim-web-devicons")
-	use("akinsho/bufferline.nvim")
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "v1.*",
+		config = function()
+			require("toggleterm").setup()
+		end,
+	})
+	use({ "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" })
+
 	use("moll/vim-bbye")
 	-- nvim 非常酷的状态栏目
 	use("nvim-lualine/lualine.nvim")
@@ -76,12 +84,11 @@ return packer.startup(function(use)
 	-- undotree 可以通过命令触发：nnoremap <F5> :UndotreeToggle<CR>
 	use("mbbill/undotree")
 	-- 配合Telescope使用非常厉害
-	use("junegunn/fzf.vim")
+	-- use("junegunn/fzf.vim")
 
 	-- dashboard，只是显示历史打开的文件
-	-- use "mhinz/vim-startify"
-	-- use "glepnir/dashboard-nvim"
-	-- use { "liuchengxu/vim-clap", run='cargo build --release && cp target/release/maple bin/' }
+	use("mhinz/vim-startify")
+	use("glepnir/dashboard-nvim")
 
 	-- 通过回车键选中一段文字，可以和surround配合使用。
 	-- gcmt/wildfire.vim
@@ -141,7 +148,6 @@ return packer.startup(function(use)
 	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
-	use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim") --  Improve startup time for Neovim
 	use("lukas-reineke/indent-blankline.nvim")
