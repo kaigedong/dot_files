@@ -39,13 +39,14 @@ rofi -show combi -combi-modi window,drun,run,ssh -modi combi -show-icons -dpi 18
 
 ## gnome 插件
 
-```bash
-# gnome插件
-https://extensions.gnome.org/extension/2986/runcat/
-https://extensions.gnome.org/extension/3724/net-speed-simplified/
-https://extensions.gnome.org/extension/261/kimpanel/
-https://extensions.gnome.org/extension/723/pixel-saver/
-```
+[https://extensions.gnome.org/extension/2986/runcat/](https://extensions.gnome.org/extension/2986/runcat/)
+
+[https://extensions.gnome.org/extension/3724/net-speed-simplified/](https://extensions.gnome.org/extension/3724/net-speed-simplified/)
+
+[https://extensions.gnome.org/extension/261/kimpanel/](https://extensions.gnome.org/extension/261/kimpanel/)
+
+[https://extensions.gnome.org/extension/723/pixel-saver/](https://extensions.gnome.org/extension/723/pixel-saver/)
+
 
 ## gnome 设置桌面快捷方式
 
