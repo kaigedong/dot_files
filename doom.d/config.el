@@ -8,7 +8,7 @@
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "kaigedong"
       user-mail-address "dongkaige@gmail.com")
-
+;;
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
 ;; - `doom-font' -- the primary font to use
@@ -23,6 +23,10 @@
 ;;
 ;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+;;
+;; For 2k screen:
+(setq doom-font (font-spec :family "NotoSansMono Nerd Font" :size 20 :weight 'semi-light)
+     doom-variable-pitch-font (font-spec :family "NotoSansMono Nerd Font" :size 21))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
