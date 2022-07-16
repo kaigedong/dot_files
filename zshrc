@@ -71,7 +71,7 @@ ZSH_PYENV_QUIET=true
 eval "$(fnm env --use-on-cd)"
 
 plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting
-    z pyenv fzf zsh-proxy)
+    z pyenv zsh-proxy)
 source $ZSH/oh-my-zsh.sh
 
 # NOTE:

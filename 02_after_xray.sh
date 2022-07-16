@@ -2,10 +2,10 @@ export http_proxy=http://127.0.0.1:10809
 export https_proxy=http://127.0.0.1:10809
 
 sudo pacman -S emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
-    flameshot rofi go lsd bat i3-wm feh tig papirus-icon-theme paru
+    flameshot rofi go lsd bat i3-wm feh tig papirus-icon-theme
 
 paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono watchexec jq \
-  screenkey polybar tokei xclip fzf stylua-bin nutstore-experimental screenfetch btop
+  screenkey polybar tokei xclip stylua-bin nutstore-experimental screenfetch btop
 
 # 设置git
 git config --global user.name kaigedong
@@ -54,12 +54,13 @@ git clone https://github.com/gpakosz/.tmux.git ~/.tmux
 ln -s -f ~/.tmux/.tmux.conf ~/.tmux.conf
 
 # fcitx5
-echo "GTK_IM_MODULE DEFAULT=fcitx
-QT_IM_MODULE  DEFAULT=fcitx
-XMODIFIERS    DEFAULT=\@im=fcitx
-INPUT_METHOD  DEFAULT=fcitx
-SDL_IM_MODULE DEFAULT=fcitx" >>~/.pam_environment
-cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart
+echo "GTK_IM_MODULE=fcitx
+QT_IM_MODULE=fcitx
+XMODIFIERS=@im=fcitx
+INPUT_METHOD=fcitx
+SDL_IM_MODULE=fcitx
+GLFW_IM_MODULE=ibus" >>/etc/environment
+cp /usr/share/applications/org.fcitx.Fcitx5.desktop ~/.config/autostart/
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
