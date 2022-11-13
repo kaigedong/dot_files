@@ -47,7 +47,6 @@ rofi -show combi -combi-modi window,drun,run,ssh -modi combi -show-icons -dpi 18
 
 [https://extensions.gnome.org/extension/723/pixel-saver/](https://extensions.gnome.org/extension/723/pixel-saver/)
 
-
 ## gnome 设置桌面快捷方式
 
 ```
@@ -72,6 +71,14 @@ dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-8 "['<Shift><Sup
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-9 "['<Shift><Super>parenleft']"
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-10 "['<Shift><Super>parenright']"
 ```
+
+## Firefox scaling in 4K screen
+
+> https://winaero.com/enable-hidpi-scaling-firefox/
+
+`about:config` -- `layout.css.devPixelsPerPx`, the default value is `-1`, it means `follow the system settings`.
+
+You can change it to `1.5`
 
 ## git 配置 GPG
 
