@@ -206,3 +206,7 @@ exec --no-startup-id xfce4-clipman
 exec --no-startup-id fcitx5
 exec --no-startup-id copyq
 exec --no-startup-id picom -bc
+# 当应用在i3中请求root权限时，需要该服务启动，参考 polkit ArchWiki
+# require `polkit`, `xfce-polkit`
+exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
+
