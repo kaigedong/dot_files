@@ -6,7 +6,7 @@ sudo pacman -S emacs alacritty base-devel tmux fcitx5-im fcitx5-rime \
 
 paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono watchexec jq \
   screenkey polybar tokei xclip stylua-bin nutstore-experimental screenfetch \
-  btop copyq picom
+  btop copyq picom xfce-polkit
 
 # 设置git
 git config --global user.name kaigedong
