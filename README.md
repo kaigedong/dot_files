@@ -72,13 +72,19 @@ dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-9 "['<Shift><Sup
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-10 "['<Shift><Super>parenright']"
 ```
 
-## Firefox scaling in 4K screen
+## Firefox
+
+### scaling in 4K screen
 
 > https://winaero.com/enable-hidpi-scaling-firefox/
 
 `about:config` -- `layout.css.devPixelsPerPx`, the default value is `-1`, it means `follow the system settings`.
 
 You can change it to `1.5`
+
+### Firefox beep when searching not match
+
+`about:config` -- `accessibility.typeaheadfind.enablesound`, set it to `false`.
 
 ## git 配置 GPG
 
