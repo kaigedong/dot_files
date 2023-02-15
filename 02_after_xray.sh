@@ -28,7 +28,7 @@ git clone https://github.com/sukkaw/zsh-proxy.git ~/.oh-my-zsh/custom/plugins/zs
 curl https://getsubstrate.io -sSf | bash -s -- --fast
 source ~/.cargo/env
 cargo install --force subkey --git https://github.com/paritytech/substrate --version 2.0.2 --locked
-cargo install tealdeer ripgrep fd-find lolcat coreutils fnm
+cargo install tealdeer ripgrep fd-find lolcat coreutils fnm cargo-update coreutils
 tldr --update
 
 # under bash: init fnm
