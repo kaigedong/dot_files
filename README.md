@@ -1,7 +1,5 @@
 # Arch
 
-![Recent Activity](https://images.repography.com/23529907/kaigedong/arch_best_config/recent-activity/92f237efa55d68089e80cfaf1a14c6fa.svg)
-
 ```bash
 # 将硬件时间设置为localtime
 sudo timedatectl set-local-rtc true
