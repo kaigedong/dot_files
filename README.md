@@ -1,41 +1,25 @@
-# Arch
-
 ```bash
-# 将硬件时间设置为localtime
-sudo timedatectl set-local-rtc true
-sudo timedatectl set-ntp true
-
-sudo pacman -Syyu
-
-echo "zh_CN.UTF-8 UTF-8" >>/etc/locale.gen
-sudo locale-gen
-```
-
-## AUR source from tuna
-
-## 安装并配置 xray
-
-```
+# 安装并配置 xray
 export http_proxy=http://127.0.0.1:10809
 export https_proxy=http://127.0.0.1:10809
 
+# SwitchyOmega
 https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt
 ```
 
-## 安装必要软件
+### 其他软件
 
-```bash
-# 安装完xray和paru之后
-bash o2_after_xray.sh
+```shell
+bash install.sh
 ```
 
-## 配置 rofi
+### rofi
 
 ```bash
 rofi -show combi -combi-modi window,drun,run,ssh -modi combi -show-icons -dpi 180 -icon-theme 'Papirus'
 ```
 
-## gnome 插件
+### Gnome 插件
 
 [https://extensions.gnome.org/extension/2986/runcat/](https://extensions.gnome.org/extension/2986/runcat/)
 
@@ -45,11 +29,11 @@ rofi -show combi -combi-modi window,drun,run,ssh -modi combi -show-icons -dpi 18
 
 [https://extensions.gnome.org/extension/723/pixel-saver/](https://extensions.gnome.org/extension/723/pixel-saver/)
 
-## gnome 设置桌面快捷方式
+### Gnome 设置桌面快捷方式
 
-```
-# paru -S dconf-editor 可通过这里，查看桌面的快捷方式：
-导航到 /org/gnome/desktop/wm/keybindings 可以看到所有的快捷键。修改对应的即可。
+```bash
+paru -S dconf-editor # (查看桌面的快捷方式)：
+# 导航到 /org/gnome/desktop/wm/keybindings 可以看到所有的快捷键。修改对应的即可。
 # 也可以通过命令行进行修改：
 
 # 查看快捷键绑定：
@@ -70,9 +54,9 @@ dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-9 "['<Shift><Sup
 dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-10 "['<Shift><Super>parenright']"
 ```
 
-## Firefox
+## 其他问题：
 
-### scaling in 4K screen
+### Firefox 4K 显示屏下缩放问题
 
 > https://winaero.com/enable-hidpi-scaling-firefox/
 
@@ -84,16 +68,6 @@ You can change it to `1.5`
 
 `about:config` -- `accessibility.typeaheadfind.enablesound`, set it to `false`.
 
-## git 配置 GPG
-
-参考：[](https://docs.github.com/cn/authentication/managing-commit-signature-verification/checking-for-existing-gpg-keys)
-
-注意！一定要配置
-
-```bash
-git config --global commit.gpgsign true
-```
-
 ## zsh_history to fish_history
 
 ```bash
@@ -101,4 +75,19 @@ gcc -c zsh_history_to_utf8.c && gcc zsh_history_to_utf8.o -o zsh_history_to_utf8
 cat ~/.zsh_history | ./zsh_history_to_utf8 > zsh_history
 python zsh_history_to_fish.py
 cat fish_history >> ~/.local/share/fish/fish_history
+```
+
+### 将硬件时间设置为 localtime （win/linux 双系统时）
+
+```shell
+# 将硬件时间设置为localtime
+sudo timedatectl set-local-rtc true
+sudo timedatectl set-ntp true
+```
+
+### 设置中文
+
+```shell
+echo "zh_CN.UTF-8 UTF-8" >>/etc/locale.gen
+sudo locale-gen
 ```
