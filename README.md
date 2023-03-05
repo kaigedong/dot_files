@@ -180,3 +180,30 @@ sudo timedatectl set-ntp true
 echo "zh_CN.UTF-8 UTF-8" >>/etc/locale.gen
 sudo locale-gen
 ```
+
+### smb
+
+```
+# 查询有哪些共享目录：
+smbclient -L //192.168.1.4 -U bobo
+```
+
+在 manjaro 中报错：
+
+```console
+❯ smbclient -L //192.168.1.4/ -U bobo
+Password for [WORKGROUP\bobo]:
+
+        Sharename       Type      Comment
+        ---------       ----      -------
+cli_rpc_pipe_open_noauth: rpc_pipe_bind for pipe srvsvc failed with error NT_STATUS_CONNECTION_DISCONNECTED
+SMB1 disabled -- no workgroup available
+```
+
+修复方法：
+[https://forum.manjaro.org/t/root-tip-how-to-basic-samba-setup-and-troubleshooting/100420#apparmor-when-serving-samba-shares-26](https://forum.manjaro.org/t/root-tip-how-to-basic-samba-setup-and-troubleshooting/100420#apparmor-when-serving-samba-shares-26)
+
+```
+sudo aa-complain /usr/bin/smbd
+sudo aa-complain samba-dcerpcd samba-bgqd samba-rpcd samba-rpcd-classic samba-rpcd-spoolss
+```
