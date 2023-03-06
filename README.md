@@ -19,6 +19,8 @@ paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono watchexec jq \
   btop copyq picom xfce-polkit
 ```
 
++ `xfce-polkit` 用来程序处理特权请求，i3中需要配置：`/usr/lib/xfce-polkit/xfce-polkit` 开机运行。
+
 #### 设置 git
 
 ```
