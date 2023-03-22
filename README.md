@@ -16,10 +16,11 @@ flameshot rofi lsd bat i3-wm feh tig papirus-icon-theme
 
 paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono watchexec jq \
   screenkey polybar tokei xclip stylua-bin nutstore-experimental screenfetch \
-  btop copyq picom xfce-polkit
+  btop copyq picom xfce-polkit bottom
 ```
 
 + `xfce-polkit` 用来程序处理特权请求，i3中需要配置：`/usr/lib/xfce-polkit/xfce-polkit` 开机运行。
++ bottom 用来看IO等信息，`btm`
 
 #### 设置 git
 
