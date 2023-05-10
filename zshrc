@@ -43,7 +43,7 @@ export GOPATH="$HOME/go"
 # export GOPROXY=https://mirrors.aliyun.com/goproxy/
 # CGO_ENABLED=1 leads to faster, smaller builds & runtimes
 # it can dynamically load the host OS's native libraries (glibc etc.)
-# export CGO_ENABLED=0
+export CGO_ENABLED=0
 ##### Node #####
 # alias npm="npm --registry=https://registry.npm.taobao.org --cache=$HOME/.npm/.cache/cnpm --disturl=https://npm.taobao.org/dist --userconfig=$HOME/.cnpmrc"
 # export npm_config_proxy=http://127.0.0.1:10809
@@ -74,6 +74,16 @@ plugins=(extract git zsh-autosuggestions zsh-syntax-highlighting
     z pyenv zsh-proxy)
 source $ZSH/oh-my-zsh.sh
 
+proxy() {
+    export http_proxy="http://127.0.0.1:10809"
+    export https_proxy=$http_proxy
+    export HTTP_PROXY=$http_proxy
+    export HTTPS_PROXY=$http_proxy
+}
+noproxy() {
+    unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+}
+
 # NOTE:
 #
 # zsh-proxy: init_proxy; config_proxy; proxy; noproxy; myip
@@ -90,6 +100,7 @@ alias baidunetdisk="/usr/lib/baidunetdisk/baidunetdisk"
 alias top="glances"
 alias open="xdg-open"
 alias cat="less"
+alias nvim="/home/bobo/.local/bin/lvim"
 
 typeset -U PATH
 # screenfetch -A 'Arch Linux' | lolcat
@@ -100,16 +111,33 @@ typeset -U PATH
 # alsamixer # 命令行调节声音大小
 # xdg-mime query default inode/directory # 查看默认的文件管理器
 
-awk 'BEGIN{
-    s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
-    for (colnum = 0; colnum<77; colnum++) {
-        r = 255-(colnum*255/76);
-        g = (colnum*510/76);
-        b = (colnum*255/76);
-        if (g>255) g = 510-g;
-        printf "\033[48;2;%d;%d;%dm", r,g,b;
-        printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
-        printf "%s\033[0m", substr(s,colnum+1,1);
-    }
-    printf "\n";
-}'
+# awk 'BEGIN{
+#     s="/\\/\\/\\/\\/\\"; s=s s s s s s s s;
+#     for (colnum = 0; colnum<77; colnum++) {
+#         r = 255-(colnum*255/76);
+#         g = (colnum*510/76);
+#         b = (colnum*255/76);
+#         if (g>255) g = 510-g;
+#         printf "\033[48;2;%d;%d;%dm", r,g,b;
+#         printf "\033[38;2;%d;%d;%dm", 255-r,255-g,255-b;
+#         printf "%s\033[0m", substr(s,colnum+1,1);
+#     }
+#     printf "\n";
+# }'
+
+function _auto_notify_track() {
+    AUTO_COMMAND_START="$(date +"%s")"
+}
+
+function _auto_notify_send() {
+    local current="$(date +"%s")"
+
+    elapsed=$((current - AUTO_COMMAND_START))
+    if [[ $elapsed -gt 30 && -n "$AUTO_COMMAND_START" ]]; then
+        paplay /usr/share/sounds/freedesktop/stereo/complete.oga
+    fi
+}
+
+add-zsh-hook preexec _auto_notify_track
+
+add-zsh-hook precmd _auto_notify_send
