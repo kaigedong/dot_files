@@ -210,3 +210,11 @@ SMB1 disabled -- no workgroup available
 sudo aa-complain /usr/bin/smbd
 sudo aa-complain samba-dcerpcd samba-bgqd samba-rpcd samba-rpcd-classic samba-rpcd-spoolss
 ```
+
+### hyprland
+ 
+```
+修复鼠标消失的问题
+# sudo nvim /usr/share/wayland-sessions/hyprland.desktop
+Exec=env WLR_NO_HARDWARE_CURSORS=1 Hyprland
+```
