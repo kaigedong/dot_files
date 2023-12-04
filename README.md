@@ -22,6 +22,10 @@ paru -S visual-studio-code-bin nerd-fonts-noto-sans-mono watchexec jq \
 + `xfce-polkit` 用来程序处理特权请求，i3中需要配置：`/usr/lib/xfce-polkit/xfce-polkit` 开机运行。
 + bottom 用来看IO等信息，`btm`
 
++ hyprland 下
+nm-applet --indicator # 用来切换wifi
+blueman # 用来切换蓝牙
+
 #### 设置 git
 
 ```
